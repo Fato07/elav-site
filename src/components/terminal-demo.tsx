@@ -1,0 +1,171 @@
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect, useCallback } from "react";
+
+interface TerminalLine {
+  type: "prompt" | "command" | "comment" | "output" | "success" | "accent" | "blank";
+  text: string;
+  delay?: number;
+}
+
+const terminalLines: TerminalLine[] = [
+  { type: "comment", text: "# Install ironclaw globally" },
+  { type: "prompt", text: "$ " },
+  { type: "command", text: "npm i -g ironclaw", delay: 40 },
+  { type: "blank", text: "" },
+  { type: "success", text: "✓ ironclaw@latest installed" },
+  { type: "blank", text: "" },
+  { type: "comment", text: "# Run the onboarding wizard" },
+  { type: "prompt", text: "$ " },
+  { type: "command", text: "ironclaw onboard --install-daemon", delay: 30 },
+  { type: "blank", text: "" },
+  { type: "accent", text: "  ◆ Detecting Node.js...        v22.21.0 ✓" },
+  { type: "accent", text: "  ◆ Creating config...          ~/.openclaw/openclaw.json ✓" },
+  { type: "accent", text: "  ◆ Installing daemon...         launchd ✓" },
+  { type: "success", text: "  ✓ Ironclaw is ready." },
+  { type: "blank", text: "" },
+  { type: "comment", text: "# Start the gateway" },
+  { type: "prompt", text: "$ " },
+  { type: "command", text: "ironclaw gateway start", delay: 35 },
+  { type: "blank", text: "" },
+  { type: "accent", text: "  ◆ Gateway listening on ws://127.0.0.1:18789" },
+  { type: "accent", text: "  ◆ Web UI available at http://localhost:18789" },
+  { type: "success", text: "  ✓ 4 channels connected (WhatsApp, Telegram, Slack, Discord)" },
+  { type: "blank", text: "" },
+  { type: "comment", text: "# Talk to your agent" },
+  { type: "prompt", text: "$ " },
+  { type: "command", text: 'ironclaw agent --message "Summarize my inbox"', delay: 25 },
+  { type: "blank", text: "" },
+  { type: "output", text: '  You have 3 unread messages across WhatsApp and Slack.' },
+  { type: "output", text: '  1. Sarah (WhatsApp): "Meeting moved to 3pm"' },
+  { type: "output", text: '  2. #eng (Slack): Deploy v2.4.1 completed' },
+  { type: "output", text: '  3. Alex (Slack): "PR review needed on auth-flow"' },
+];
+
+export default function TerminalDemo() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [visibleLines, setVisibleLines] = useState<
+    { type: string; text: string; typingText?: string; isTyping?: boolean }[]
+  >([]);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  const runAnimation = useCallback(async () => {
+    const lines: typeof visibleLines = [];
+
+    for (const line of terminalLines) {
+      if (line.type === "command" && line.delay) {
+        // Type out command character by character
+        const promptLine = lines[lines.length - 1];
+        const baseText = promptLine?.text || "";
+
+        for (let i = 0; i <= line.text.length; i++) {
+          const partial = line.text.slice(0, i);
+          lines[lines.length - 1] = {
+            type: "prompt",
+            text: baseText,
+            typingText: partial,
+            isTyping: i < line.text.length,
+          };
+          setVisibleLines([...lines]);
+          await new Promise((r) => setTimeout(r, line.delay));
+        }
+        lines[lines.length - 1] = {
+          type: "prompt",
+          text: baseText + line.text,
+          isTyping: false,
+        };
+        setVisibleLines([...lines]);
+        await new Promise((r) => setTimeout(r, 300));
+      } else if (line.type === "prompt") {
+        lines.push({ type: line.type, text: line.text, isTyping: true });
+        setVisibleLines([...lines]);
+        await new Promise((r) => setTimeout(r, 200));
+      } else {
+        lines.push({ type: line.type, text: line.text });
+        setVisibleLines([...lines]);
+        await new Promise((r) => setTimeout(r, line.type === "blank" ? 100 : 60));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isInView && !hasStarted) {
+      setHasStarted(true);
+      runAnimation();
+    }
+  }, [isInView, hasStarted, runAnimation]);
+
+  return (
+    <section className="relative py-24 sm:py-32 bg-stone-50" ref={ref}>
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="font-[family-name:var(--font-instrument)] text-3xl sm:text-4xl text-stone-900 italic mb-4">
+            Up and running in seconds
+          </h2>
+          <p className="text-stone-500 text-lg max-w-lg mx-auto">
+            One command to install. One command to start. Your AI agent is ready to work.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <div className="terminal-window">
+            <div className="terminal-header">
+              <div className="terminal-dot" style={{ background: "#FF5F56" }} />
+              <div className="terminal-dot" style={{ background: "#FFBD2E" }} />
+              <div className="terminal-dot" style={{ background: "#27CA40" }} />
+              <span className="ml-4 text-xs text-stone-500 font-[family-name:var(--font-mono)]">
+                ironclaw — terminal
+              </span>
+            </div>
+            <div className="terminal-body min-h-[420px] sm:min-h-[480px] overflow-hidden">
+              {visibleLines.map((line, i) => (
+                <div key={i} className="leading-relaxed">
+                  {line.type === "blank" && <br />}
+                  {line.type === "comment" && (
+                    <span className="terminal-comment">{line.text}</span>
+                  )}
+                  {line.type === "prompt" && (
+                    <span>
+                      <span className="terminal-prompt">{line.text}</span>
+                      {line.typingText !== undefined && (
+                        <span className="terminal-command">{line.typingText}</span>
+                      )}
+                      {line.isTyping && <span className="terminal-cursor" />}
+                    </span>
+                  )}
+                  {line.type === "output" && (
+                    <span className="text-stone-300">{line.text}</span>
+                  )}
+                  {line.type === "success" && (
+                    <span className="terminal-success">{line.text}</span>
+                  )}
+                  {line.type === "accent" && (
+                    <span className="terminal-accent">{line.text}</span>
+                  )}
+                </div>
+              ))}
+              {visibleLines.length === 0 && isInView && (
+                <span className="terminal-prompt">
+                  $ <span className="terminal-cursor" />
+                </span>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
