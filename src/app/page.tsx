@@ -7,9 +7,9 @@ import KanbanDemo from "@/components/demos/kanban-demo";
 import CapabilitiesDemo from "@/components/demos/capabilities-demo";
 import DocumentDemo from "@/components/demos/document-demo";
 import SkillsStore from "@/components/demos/skills-store";
+import ImportSection from "@/components/import-section";
 import TerminalDemo from "@/components/terminal-demo";
 import Features from "@/components/features";
-import Channels from "@/components/channels";
 import YCBacked from "@/components/yc-backed";
 import OpenSource from "@/components/open-source";
 import InstallCTA from "@/components/install-cta";
@@ -28,12 +28,11 @@ export default function Home() {
         <CapabilitiesDemo />
         <DocumentDemo />
         <SkillsStore />
+        <ImportSection />
         <div className="section-divider" />
         <TerminalDemo />
         <div className="section-divider" />
         <Features />
-        <div className="section-divider" />
-        <Channels />
         <YCBacked />
         <OpenSource />
         <div className="section-divider" />

@@ -379,7 +379,7 @@ function ChatPanel({ animate }: { animate: boolean }) {
                   </div>
                 </div>
               ) : msg.role === "tool" ? (
-                <div className="bg-stone-900 text-stone-300 text-[10px] font-[family-name:var(--font-mono)] p-2.5 rounded-lg overflow-x-auto leading-relaxed max-h-[120px] overflow-y-auto">
+                <div className="bg-stone-100 text-stone-600 text-[10px] font-[family-name:var(--font-mono)] p-2.5 rounded-lg border border-stone-200/60 overflow-x-auto leading-relaxed max-h-[120px] overflow-y-auto">
                   <pre className="whitespace-pre-wrap break-all">{msg.content}</pre>
                 </div>
               ) : (

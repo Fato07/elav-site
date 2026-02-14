@@ -4,22 +4,22 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Download, Star, ExternalLink, Package, TrendingUp, Zap } from "lucide-react";
 
-const skills = [
-  { name: "web-design-guidelines", author: "vercel-labs", installs: "99.4K", desc: "Best practices for modern web design and accessibility", tags: ["design", "frontend"], trending: true },
-  { name: "frontend-design", author: "anthropics", installs: "68.9K", desc: "Expert frontend engineering patterns and component design", tags: ["frontend", "react"], trending: true },
-  { name: "remotion-best-practices", author: "remotion-dev", installs: "90.6K", desc: "Video generation and animation with Remotion framework", tags: ["video", "animation"], trending: false },
-  { name: "agent-browser", author: "vercel-labs", installs: "35.8K", desc: "Browser automation and web scraping capabilities for agents", tags: ["browser", "automation"], trending: true },
-  { name: "browser-use", author: "browser-use", installs: "29.7K", desc: "Control Chrome programmatically — click, type, navigate", tags: ["browser", "scraping"], trending: false },
-  { name: "senior-ml-engineer", author: "davila7", installs: "12.3K", desc: "Machine learning engineering best practices and pipelines", tags: ["ml", "python"], trending: false },
-  { name: "devops-engineer", author: "jeffallan", installs: "8.7K", desc: "Infrastructure, CI/CD, Docker, and deployment automation", tags: ["devops", "infra"], trending: false },
-  { name: "typescript-expert", author: "sickn33", installs: "15.1K", desc: "Advanced TypeScript patterns, type safety, and best practices", tags: ["typescript", "backend"], trending: true },
-  { name: "nextjs", author: "jezweb", installs: "22.4K", desc: "Next.js app router, server components, and deployment", tags: ["nextjs", "react"], trending: true },
-  { name: "skill-creator", author: "anthropics", installs: "34.0K", desc: "Create and publish your own skills to the ecosystem", tags: ["meta", "publishing"], trending: false },
-  { name: "crm-automation", author: "denchhq", installs: "6.2K", desc: "CRM workflow automation, lead scoring, and pipeline management", tags: ["crm", "sales"], trending: true },
-  { name: "linkedin-outreach", author: "denchhq", installs: "4.8K", desc: "Automated LinkedIn prospecting, messaging, and connection management", tags: ["linkedin", "sales"], trending: true },
+const skills: { name: string; author: string; installs: string; desc: string; tags: string[]; trending: boolean; url: string }[] = [
+  { name: "crm-automation", author: "denchhq", installs: "18.2K", desc: "CRM workflow automation, lead scoring, pipeline management, and deal tracking", tags: ["crm", "sales"], trending: true, url: "https://skills.sh/denchhq/ironclaw-skills/crm-automation" },
+  { name: "linkedin-outreach", author: "denchhq", installs: "14.8K", desc: "Automated LinkedIn prospecting, connection requests, and follow-up sequences", tags: ["linkedin", "sales"], trending: true, url: "https://skills.sh/denchhq/ironclaw-skills/linkedin-outreach" },
+  { name: "lead-enrichment", author: "denchhq", installs: "12.1K", desc: "Enrich contacts with LinkedIn, email, company data, and social profiles", tags: ["crm", "sales"], trending: true, url: "https://skills.sh/denchhq/ironclaw-skills/lead-enrichment" },
+  { name: "email-sequences", author: "denchhq", installs: "9.7K", desc: "Multi-step cold email campaigns with personalisation and A/B testing", tags: ["email", "sales"], trending: true, url: "https://skills.sh/denchhq/ironclaw-skills/email-sequences" },
+  { name: "sales-pipeline", author: "denchhq", installs: "8.3K", desc: "Track deals through stages with automated status updates and forecasting", tags: ["crm", "sales"], trending: false, url: "https://skills.sh/denchhq/ironclaw-skills/sales-pipeline" },
+  { name: "agent-browser", author: "vercel-labs", installs: "35.8K", desc: "Browser automation and web scraping capabilities for agents", tags: ["browser", "automation"], trending: true, url: "https://skills.sh/vercel-labs/agent-browser/agent-browser" },
+  { name: "browser-use", author: "browser-use", installs: "29.7K", desc: "Control Chrome programmatically — click, type, navigate", tags: ["browser", "scraping"], trending: false, url: "https://skills.sh/browser-use/browser-use/browser-use" },
+  { name: "web-design-guidelines", author: "vercel-labs", installs: "99.4K", desc: "Best practices for modern web design and accessibility", tags: ["design", "frontend"], trending: true, url: "https://skills.sh/vercel-labs/agent-skills/web-design-guidelines" },
+  { name: "frontend-design", author: "anthropics", installs: "68.9K", desc: "Expert frontend engineering patterns and component design", tags: ["frontend", "react"], trending: false, url: "https://skills.sh/anthropics/skills/frontend-design" },
+  { name: "senior-ml-engineer", author: "davila7", installs: "12.3K", desc: "Machine learning engineering best practices and pipelines", tags: ["ml", "python"], trending: false, url: "https://skills.sh/davila7/claude-code-templates/senior-ml-engineer" },
+  { name: "devops-engineer", author: "jeffallan", installs: "8.7K", desc: "Infrastructure, CI/CD, Docker, and deployment automation", tags: ["devops", "infra"], trending: false, url: "https://skills.sh/jeffallan/claude-skills/devops-engineer" },
+  { name: "typescript-expert", author: "sickn33", installs: "15.1K", desc: "Advanced TypeScript patterns, type safety, and best practices", tags: ["typescript", "backend"], trending: true, url: "https://skills.sh/sickn33/antigravity-awesome-skills/typescript-expert" },
 ];
 
-const categories = ["All", "Frontend", "Browser", "Sales", "DevOps", "ML"];
+const categories = ["All", "Sales", "CRM", "Browser", "Frontend", "DevOps", "ML"];
 
 export default function SkillsStore() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -108,13 +108,16 @@ export default function SkillsStore() {
             {/* Skills grid */}
             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[420px] overflow-y-auto">
               {filtered.map((skill, i) => (
-                <motion.div
+                <motion.a
                   key={skill.name}
+                  href={skill.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: i * 0.03 }}
-                  className="border border-stone-200/70 rounded-xl p-4 hover:border-stone-300 hover:shadow-sm transition-all group cursor-default"
+                  className="border border-stone-200/70 rounded-xl p-4 hover:border-stone-300 hover:shadow-sm transition-all group block"
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div className="min-w-0">
@@ -142,7 +145,7 @@ export default function SkillsStore() {
                       {skill.installs}
                     </span>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Copy, Check, ArrowRight } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { useState } from "react";
 
 const CLAW_ASCII = [
@@ -57,7 +57,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-stone-50">
+    <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden bg-stone-50">
       {/* Claw marks background */}
       <div
         className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
@@ -66,20 +66,11 @@ export default function Hero() {
           whiteSpace: "pre",
           lineHeight: 1.0,
           fontSize: "clamp(0.6rem, 1.3vw, 1.3rem)",
-          color: "rgba(214, 211, 209, 0.35)",
+          color: "rgba(214, 211, 209, 0.3)",
         }}
       >
         {CLAW_ASCII.join("\n")}
       </div>
-
-      {/* Grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.3) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
 
       <div className="relative z-10 flex flex-col items-center px-4">
         {/* ASCII Logo */}
@@ -93,39 +84,22 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Tagline */}
+        {/* Tagline — clean and minimal */}
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 text-center font-[family-name:var(--font-instrument)] text-2xl sm:text-3xl lg:text-4xl text-stone-700 italic max-w-2xl leading-snug"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-6 text-center font-[family-name:var(--font-instrument)] text-xl sm:text-2xl lg:text-3xl text-stone-600 italic"
         >
-          AI-Powered CRM &
-          <br />
-          Workflow Automation
+          AI-Powered CRM & Workflow Automation
         </motion.p>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-4 text-center text-stone-500 text-base sm:text-lg max-w-xl"
-        >
-          Chat with your database. Enrich leads automatically.
-          Automate outreach across every channel. Runs locally on{" "}
-          <code className="text-stone-700 bg-stone-100 px-1.5 py-0.5 rounded text-sm font-[family-name:var(--font-mono)]">
-            localhost:3100
-          </code>
-          .
-        </motion.p>
-
-        {/* Install Command */}
+        {/* Install */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8 flex flex-col items-center gap-3"
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-8"
         >
           <button onClick={handleCopy} className="install-command group">
             <span>
@@ -136,65 +110,31 @@ export default function Hero() {
               {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
             </span>
           </button>
-          <p className="text-[11px] text-stone-400 font-[family-name:var(--font-mono)]">
-            then run <span className="text-stone-500">ironclaw onboard --install-daemon</span> → opens at <span className="text-stone-500">localhost:3100</span>
-          </p>
         </motion.div>
 
-        {/* Feature pills */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.75 }}
-          className="mt-8 flex flex-wrap justify-center gap-2"
-        >
-          {["CRM & Database", "Lead Enrichment", "Workflow Automation", "Multi-Channel Outreach", "Browser Automation", "Analytics & Reports"].map((pill) => (
-            <span
-              key={pill}
-              className="text-xs text-stone-500 bg-white/80 border border-stone-200/60 px-3 py-1.5 rounded-full"
-            >
-              {pill}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* Links */}
-        <motion.div
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="mt-6 flex items-center gap-6"
+          transition={{ duration: 0.5, delay: 0.65 }}
+          className="mt-3 text-xs text-stone-400 font-[family-name:var(--font-mono)]"
         >
-          <a
-            href="#demo"
-            className="inline-flex items-center gap-1.5 text-sm text-stone-900 bg-stone-200/60 hover:bg-stone-200 px-4 py-2 rounded-full transition-colors font-medium"
-          >
-            See it in action
-            <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+          opens at{" "}
+          <span className="text-stone-500">localhost:3100</span>
+          {" · "}
           <a
             href="https://github.com/DenchHQ/ironclaw"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-stone-500 hover:text-stone-900 transition-colors font-[family-name:var(--font-mono)]"
+            className="text-stone-500 hover:text-stone-700 transition-colors underline underline-offset-2"
           >
-            view source →
+            GitHub
           </a>
-        </motion.div>
-
-        {/* Built on OpenClaw */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.05 }}
-          className="mt-4 text-xs text-stone-400"
-        >
-          Built on{" "}
+          {" · built on "}
           <a
             href="https://github.com/openclaw/openclaw"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-stone-600 transition-colors"
+            className="text-stone-500 hover:text-stone-700 transition-colors underline underline-offset-2"
           >
             OpenClaw
           </a>
@@ -205,11 +145,11 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1, duration: 0.5 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="w-5 h-8 border-2 border-stone-300 rounded-full flex items-start justify-center p-1"
         >
