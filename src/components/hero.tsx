@@ -57,7 +57,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden bg-stone-50">
+    <section className="relative pt-24 pb-8 sm:pt-32 sm:pb-12 flex flex-col items-center overflow-hidden bg-stone-50">
       {/* Claw marks background */}
       <div
         className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
@@ -66,7 +66,7 @@ export default function Hero() {
           whiteSpace: "pre",
           lineHeight: 1.0,
           fontSize: "clamp(0.6rem, 1.3vw, 1.3rem)",
-          color: "rgba(214, 211, 209, 0.3)",
+          color: "rgba(214, 211, 209, 0.25)",
         }}
       >
         {CLAW_ASCII.join("\n")}
@@ -77,29 +77,29 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="ascii-banner select-none" aria-label="IRONCLAW">
             {IRONCLAW_ASCII.join("\n")}
           </div>
         </motion.div>
 
-        {/* Tagline — clean and minimal */}
+        {/* Tagline */}
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6 text-center font-[family-name:var(--font-instrument)] text-xl sm:text-2xl lg:text-3xl text-stone-600 italic"
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="mt-5 text-center font-[family-name:var(--font-instrument)] text-xl sm:text-2xl lg:text-3xl text-stone-600 italic"
         >
-          AI-Powered CRM & Workflow Automation
+          AI CRM, hosted locally on your Mac.
         </motion.p>
 
         {/* Install */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-6"
         >
           <button onClick={handleCopy} className="install-command group">
             <span>
@@ -115,47 +115,12 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.65 }}
-          className="mt-3 text-xs text-stone-400 font-[family-name:var(--font-mono)]"
+          transition={{ duration: 0.5, delay: 0.55 }}
+          className="mt-2.5 text-[11px] text-stone-400 font-[family-name:var(--font-mono)]"
         >
-          opens at{" "}
-          <span className="text-stone-500">localhost:3100</span>
-          {" · "}
-          <a
-            href="https://github.com/DenchHQ/ironclaw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-stone-500 hover:text-stone-700 transition-colors underline underline-offset-2"
-          >
-            GitHub
-          </a>
-          {" · built on "}
-          <a
-            href="https://github.com/openclaw/openclaw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-stone-500 hover:text-stone-700 transition-colors underline underline-offset-2"
-          >
-            OpenClaw
-          </a>
+          opens at <span className="text-stone-500">localhost:3100</span>
         </motion.p>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-5 h-8 border-2 border-stone-300 rounded-full flex items-start justify-center p-1"
-        >
-          <div className="w-1 h-2 bg-stone-400 rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

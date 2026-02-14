@@ -460,27 +460,8 @@ export default function AppDemo() {
   }, [isInView, hasAnimated]);
 
   return (
-    <section id="demo" ref={sectionRef} className="relative py-16 sm:py-24 bg-stone-50 overflow-hidden">
+    <section id="demo" ref={sectionRef} className="relative pt-4 pb-16 sm:pb-24 bg-stone-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10"
-        >
-          <p className="text-sm font-[family-name:var(--font-mono)] text-stone-400 tracking-widest uppercase mb-3">
-            Live Demo
-          </p>
-          <h2 className="font-[family-name:var(--font-instrument)] text-3xl sm:text-4xl lg:text-5xl text-stone-900 italic mb-4">
-            Your CRM, powered by AI
-          </h2>
-          <p className="text-stone-500 text-lg max-w-2xl">
-            Say &ldquo;build me a founder database from this batch, enrich all
-            their profiles, and set up outreach&rdquo; — and watch it happen in real time.
-          </p>
-        </motion.div>
 
         {/* App window */}
         <motion.div
