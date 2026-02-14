@@ -41,7 +41,11 @@ export default function InstallCTA() {
             Install Ironclaw
           </h2>
           <p className="text-stone-500 text-lg mb-10 max-w-md mx-auto">
-            One command. Node 22+. Your AI agent is ready in under a minute.
+            One command. Node 22+. Opens at{" "}
+            <code className="text-stone-700 bg-stone-100 px-1.5 py-0.5 rounded text-sm font-[family-name:var(--font-mono)]">
+              localhost:3100
+            </code>{" "}
+            in under a minute.
           </p>
         </motion.div>
 

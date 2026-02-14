@@ -61,6 +61,7 @@ export type ChatMessage = {
   content: string;
   thinking?: string;
   isCode?: boolean;
+  isReport?: boolean;
   delay: number; // ms from start
 };
 
@@ -68,43 +69,52 @@ export const chatMessages: ChatMessage[] = [
   {
     id: "1",
     role: "user",
-    content: "write a personalised note...",
+    content: "enrich all founders and show me a pipeline breakdown",
     delay: 0,
   },
   {
     id: "2",
     role: "tool",
-    content: `command: cd /Users/kumareth/.openclaw/workspace && duckdb dench/workspace.duckdb "
-INSERT INTO fields (id, object_id, name, type, sort_order)
-VALUES (
-  (SELECT string_agg(substr('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
-  abcdefghijklmnopqrstuvwxyz_-', (floor(random() * 64) + 1)::int, 1), '')
-  FROM generate_series(1, 32)),
-  (SELECT id FROM objects WHERE name = 'founders'), 'Agent Note', 'richtext', 20
-) ON CONFLICT (object_id, name) DO NOTHING;`,
+    content: `duckdb workspace.duckdb "SELECT 'Status', COUNT(*) FROM v_founders GROUP BY 'Status' ORDER BY count DESC"
+
+New        | 89
+Contacted  | 67
+Qualified  | 31
+Converted  | 13`,
     isCode: true,
     delay: 1200,
   },
   {
     id: "3",
     role: "assistant",
-    content: "Good, field created. Now let me write the script to generate personalized notes for all 278 founders.",
-    thinking: "Thought for 4s",
-    delay: 2800,
+    content: "Found 200 founders. Enriching LinkedIn profiles and education data now — I'll update each row as I go.",
+    thinking: "Thought for 3s",
+    delay: 2400,
   },
   {
     id: "4",
     role: "tool",
-    content: `Running: cd /Users/kumareth/.openclaw/workspace && duckdb dench/workspace.duckdb -json "SELECT id FROM fields WHERE object_id = (SELECT id FROM objects WHERE name = 'founders') AND name = 'Agent Note'"`,
+    content: `✓ Enriched 200/200 founders
+  → LinkedIn URLs: 196 found (98%)
+  → Education: 144 found (72%)
+  → Company info: 200/200 (100%)`,
     isCode: true,
     delay: 4000,
   },
   {
     id: "5",
+    role: "assistant",
+    content: "All done! Here's the pipeline breakdown:",
+    isReport: true,
+    delay: 5000,
+  },
+  {
+    id: "6",
     role: "tool",
-    content: `command: cd /Users/kumareth/.openclaw/workspace && duckdb dench/workspace.duckdb -json "SELECT c.entry_id as company_entry_id, * FROM v_companies c LIMIT 3" 2>&1 | head -c 2000`,
+    content: `{"version":1,"title":"Pipeline","panels":[{"id":"p1","title":"By Status","type":"bar","sql":"SELECT Status, COUNT(*)...","mapping":{"xAxis":"Status","yAxis":["count"]}}]}`,
     isCode: true,
-    delay: 5200,
+    isReport: true,
+    delay: 5800,
   },
 ];
 

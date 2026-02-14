@@ -358,8 +358,28 @@ function ChatPanel({ animate }: { animate: boolean }) {
                     {msg.content}
                   </div>
                 </div>
+              ) : msg.role === "tool" && msg.isReport ? (
+                <div className="border border-stone-200 rounded-xl overflow-hidden">
+                  <div className="px-2.5 py-1.5 bg-stone-50 border-b border-stone-200/60 flex items-center gap-1.5">
+                    <svg className="w-3 h-3 text-stone-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                    <span className="text-[9px] text-stone-500 font-[family-name:var(--font-mono)]">report-json — Pipeline</span>
+                  </div>
+                  <div className="p-2.5 flex items-end gap-2 h-[80px]">
+                    {[
+                      { label: "New", value: 89, color: "#94a3b8" },
+                      { label: "Contacted", value: 67, color: "#3b82f6" },
+                      { label: "Qualified", value: 31, color: "#10b981" },
+                      { label: "Converted", value: 13, color: "#8b5cf6" },
+                    ].map((b) => (
+                      <div key={b.label} className="flex-1 flex flex-col items-center gap-0.5">
+                        <div className="w-full rounded-t" style={{ height: `${(b.value / 89) * 55}px`, background: b.color }} />
+                        <span className="text-[7px] text-stone-400">{b.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ) : msg.role === "tool" ? (
-                <div className="bg-stone-900 text-stone-300 text-[10px] font-mono p-2.5 rounded-lg overflow-x-auto leading-relaxed max-h-[120px] overflow-y-auto">
+                <div className="bg-stone-900 text-stone-300 text-[10px] font-[family-name:var(--font-mono)] p-2.5 rounded-lg overflow-x-auto leading-relaxed max-h-[120px] overflow-y-auto">
                   <pre className="whitespace-pre-wrap break-all">{msg.content}</pre>
                 </div>
               ) : (
@@ -440,7 +460,7 @@ export default function AppDemo() {
   }, [isInView, hasAnimated]);
 
   return (
-    <section ref={sectionRef} className="relative py-16 sm:py-24 bg-stone-50 overflow-hidden">
+    <section id="demo" ref={sectionRef} className="relative py-16 sm:py-24 bg-stone-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -457,8 +477,8 @@ export default function AppDemo() {
             Your CRM, powered by AI
           </h2>
           <p className="text-stone-500 text-lg max-w-2xl">
-            &ldquo;Look into all the YC W26 companies, create a full list of founders,
-            enrich their profiles, and put it all into a CRM.&rdquo; — and it just works.
+            Say &ldquo;build me a founder database from this batch, enrich all
+            their profiles, and set up outreach&rdquo; — and watch it happen in real time.
           </p>
         </motion.div>
 
