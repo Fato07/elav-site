@@ -1,49 +1,345 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { Sparkles, Globe, Send, Check, ChevronRight, Search, UserPlus, Mail, BarChart3 } from "lucide-react";
+import {
+  Search,
+  Sparkles,
+  Send,
+  BarChart3,
+  Clock,
+  Check,
+  UserPlus,
+  Mail,
+  Globe,
+  ArrowRight,
+} from "lucide-react";
 
-/* Steps of the animation sequence */
-const steps = [
-  { id: "prompt", label: "You type a prompt", duration: 2000 },
-  { id: "browse", label: "Agent opens Chrome", duration: 2500 },
-  { id: "scrape", label: "Scrapes lead data", duration: 2000 },
-  { id: "enrich", label: "Enriches profiles", duration: 2000 },
-  { id: "outreach", label: "Sends outreach", duration: 2000 },
-  { id: "crm", label: "Updates CRM", duration: 1500 },
+/* ─── Use case definitions ─── */
+const useCases = [
+  {
+    id: "prospect",
+    icon: Search,
+    label: "Find Leads",
+    prompt: "Find YC W26 founders building AI companies",
+    color: "#3b82f6",
+    bg: "bg-blue-50",
+  },
+  {
+    id: "enrich",
+    icon: Sparkles,
+    label: "Enrich Data",
+    prompt: "Enrich all contacts with LinkedIn and email",
+    color: "#8b5cf6",
+    bg: "bg-violet-50",
+  },
+  {
+    id: "outreach",
+    icon: Send,
+    label: "Send Outreach",
+    prompt: "Send personalized messages to qualified leads",
+    color: "#10b981",
+    bg: "bg-emerald-50",
+  },
+  {
+    id: "analytics",
+    icon: BarChart3,
+    label: "Analyze",
+    prompt: "Show me pipeline stats for this quarter",
+    color: "#f59e0b",
+    bg: "bg-amber-50",
+  },
+  {
+    id: "automate",
+    icon: Clock,
+    label: "Automate",
+    prompt: "Set up weekly follow-up sequences for all leads",
+    color: "#ef4444",
+    bg: "bg-red-50",
+  },
 ];
 
+/* ─── Demo content for each use case ─── */
+
+function ProspectDemo() {
+  const leads = [
+    { name: "Veer Shah", company: "Cumulus Labs", role: "Founder & CEO", match: "98%" },
+    { name: "Emily Zhang", company: "Nexus AI", role: "Co-founder & CTO", match: "95%" },
+    { name: "Marcus Johnson", company: "DataForge", role: "Founder", match: "93%" },
+    { name: "Sarah Chen", company: "Quantum Labs", role: "CEO", match: "91%" },
+    { name: "Alex Park", company: "Synthetics.io", role: "Co-founder", match: "88%" },
+  ];
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-2 text-[11px] text-stone-400 mb-3">
+        <Globe className="w-3 h-3 text-blue-500" />
+        <span>Scraping YC directory and LinkedIn — <span className="text-stone-600 font-medium">127 matches</span></span>
+      </div>
+      {leads.map((lead, i) => (
+        <motion.div
+          key={lead.name}
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3, delay: i * 0.15 }}
+          className="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-stone-100 hover:border-stone-200 transition-colors"
+        >
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-[10px] font-bold text-blue-600 shrink-0">
+            {lead.name.split(" ").map(n => n[0]).join("")}
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-[12px] font-semibold text-stone-800 truncate">{lead.name}</p>
+            <p className="text-[10px] text-stone-400 truncate">{lead.role} · {lead.company}</p>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="text-[9px] font-mono text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full">{lead.match}</span>
+            <UserPlus className="w-3.5 h-3.5 text-blue-400" />
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+function EnrichDemo() {
+  const fields = [
+    { name: "Veer Shah", linkedin: "linkedin.com/in/veer-shah", email: "veer@cumulus.ai", education: "University of Wisconsin" },
+    { name: "Emily Zhang", linkedin: "linkedin.com/in/emily-zhang", email: "emily@nexusai.co", education: "Stanford University" },
+    { name: "Marcus Johnson", linkedin: "linkedin.com/in/marcus-j", email: "marcus@dataforge.io", education: "MIT" },
+    { name: "Sarah Chen", linkedin: "linkedin.com/in/sarah-chen", email: "sarah@quantumlabs.co", education: "UC Berkeley" },
+  ];
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 text-[11px] text-stone-400 mb-3">
+        <Sparkles className="w-3 h-3 text-violet-500" />
+        <span>Enriching 127 profiles — <span className="text-stone-600 font-medium">98% coverage</span></span>
+      </div>
+      <div className="border border-stone-100 rounded-xl overflow-hidden">
+        <div className="grid grid-cols-[1fr_1.2fr_1.2fr_1fr] text-[9px] font-mono text-stone-400 uppercase tracking-wider px-3 py-2 bg-stone-50/80 border-b border-stone-100">
+          <span>Name</span><span>LinkedIn</span><span>Email</span><span>Education</span>
+        </div>
+        {fields.map((f, i) => (
+          <motion.div
+            key={f.name}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: i * 0.2 }}
+            className="grid grid-cols-[1fr_1.2fr_1.2fr_1fr] text-[11px] px-3 py-2 border-b border-stone-50 last:border-0 items-center"
+          >
+            <span className="font-medium text-stone-800 truncate">{f.name}</span>
+            <motion.span
+              className="text-blue-500 truncate"
+              initial={{ opacity: 0, color: "#8b5cf6" }}
+              animate={{ opacity: 1, color: "#3b82f6" }}
+              transition={{ duration: 0.5, delay: i * 0.2 + 0.3 }}
+            >
+              {f.linkedin}
+            </motion.span>
+            <motion.span
+              className="text-stone-500 truncate"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: i * 0.2 + 0.5 }}
+            >
+              {f.email}
+            </motion.span>
+            <motion.span
+              className="text-stone-500 truncate"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: i * 0.2 + 0.7 }}
+            >
+              {f.education}
+            </motion.span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function OutreachDemo() {
+  const messages = [
+    { name: "Veer Shah", preview: "Hi Veer, I saw Cumulus Labs in the latest YC batch — congrats! We're building...", status: "Sent", done: true },
+    { name: "Emily Zhang", preview: "Emily, your work on multimodal AI at Nexus is impressive. We'd love to...", status: "Sent", done: true },
+    { name: "Marcus Johnson", preview: "Marcus, DataForge caught my eye — the data infra space is heating up. I'd...", status: "Sending", done: false },
+    { name: "Sarah Chen", preview: "Sarah, Quantum Labs' approach to quantum computing is fascinating. We're...", status: "Queued", done: false },
+  ];
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-2 text-[11px] text-stone-400 mb-3">
+        <Mail className="w-3 h-3 text-emerald-500" />
+        <span>Sending personalized LinkedIn messages — <span className="text-stone-600 font-medium">42 of 67</span></span>
+      </div>
+      {messages.map((m, i) => (
+        <motion.div
+          key={m.name}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: i * 0.2 }}
+          className="p-3 bg-white rounded-xl border border-stone-100"
+        >
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[12px] font-semibold text-stone-800">{m.name}</span>
+            <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded-full ${m.done ? "bg-green-50 text-green-600" : m.status === "Sending" ? "bg-blue-50 text-blue-600" : "bg-stone-50 text-stone-400"}`}>
+              {m.done && <Check className="w-2.5 h-2.5 inline mr-0.5" />}
+              {m.status}
+            </span>
+          </div>
+          <p className="text-[10.5px] text-stone-500 leading-relaxed truncate">{m.preview}</p>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+function AnalyticsDemo() {
+  const stats = [
+    { label: "Response Rate", value: "34%", change: "+12%", positive: true },
+    { label: "Avg Reply Time", value: "2.4d", change: "-0.8d", positive: true },
+    { label: "Pipeline Value", value: "$1.2M", change: "+$340K", positive: true },
+    { label: "Conversion", value: "6.5%", change: "+2.1%", positive: true },
+  ];
+
+  const bars = [
+    { label: "New", value: 89, color: "#94a3b8" },
+    { label: "Contacted", value: 67, color: "#3b82f6" },
+    { label: "Qualified", value: 31, color: "#10b981" },
+    { label: "Converted", value: 13, color: "#8b5cf6" },
+  ];
+  const maxBar = bars[0].value;
+
+  return (
+    <div className="space-y-4">
+      <div className="grid grid-cols-4 gap-2">
+        {stats.map((s, i) => (
+          <motion.div
+            key={s.label}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: i * 0.1 }}
+            className="bg-white rounded-xl border border-stone-100 p-2.5 text-center"
+          >
+            <p className="text-lg font-bold text-stone-800">{s.value}</p>
+            <p className="text-[9px] text-stone-400 mt-0.5">{s.label}</p>
+            <p className="text-[9px] font-mono text-green-600 mt-1">{s.change}</p>
+          </motion.div>
+        ))}
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
+        className="bg-white rounded-xl border border-stone-100 p-3"
+      >
+        <p className="text-[10px] text-stone-400 font-medium mb-3">Pipeline by Stage</p>
+        <div className="space-y-2">
+          {bars.map((b, i) => (
+            <div key={b.label} className="flex items-center gap-2">
+              <span className="text-[10px] text-stone-500 w-16 shrink-0">{b.label}</span>
+              <div className="flex-1 h-5 bg-stone-50 rounded overflow-hidden">
+                <motion.div
+                  className="h-full rounded"
+                  style={{ background: b.color }}
+                  initial={{ width: 0 }}
+                  animate={{ width: `${(b.value / maxBar) * 100}%` }}
+                  transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
+                />
+              </div>
+              <span className="text-[10px] font-mono text-stone-600 w-6 text-right">{b.value}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function AutomateDemo() {
+  const automations = [
+    { name: "Follow-up if no reply after 3 days", trigger: "No reply · 3d", status: "Active", icon: "🔄" },
+    { name: "Move to Qualified when they reply", trigger: "Reply detected", status: "Active", icon: "📥" },
+    { name: "Weekly pipeline report every Monday", trigger: "Cron · MON 9AM", status: "Active", icon: "📊" },
+    { name: "Enrich new leads from LinkedIn", trigger: "New lead added", status: "Active", icon: "✨" },
+    { name: "Alert me on high-intent replies", trigger: "Sentiment > 0.8", status: "Active", icon: "🔔" },
+  ];
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-2 text-[11px] text-stone-400 mb-3">
+        <Clock className="w-3 h-3 text-red-500" />
+        <span>Created 5 automation rules — <span className="text-stone-600 font-medium">all active</span></span>
+      </div>
+      {automations.map((a, i) => (
+        <motion.div
+          key={a.name}
+          initial={{ opacity: 0, x: -8 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3, delay: i * 0.12 }}
+          className="flex items-center gap-3 p-2.5 bg-white rounded-xl border border-stone-100"
+        >
+          <span className="text-sm shrink-0">{a.icon}</span>
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] font-medium text-stone-800 truncate">{a.name}</p>
+            <p className="text-[9px] text-stone-400 font-mono">{a.trigger}</p>
+          </div>
+          <span className="text-[9px] font-mono text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full flex items-center gap-1 shrink-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+            {a.status}
+          </span>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+const demoComponents: Record<string, React.ComponentType> = {
+  prospect: ProspectDemo,
+  enrich: EnrichDemo,
+  outreach: OutreachDemo,
+  analytics: AnalyticsDemo,
+  automate: AutomateDemo,
+};
+
+/* ─── Main Component ─── */
 export default function PromptShowcase() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [activeStep, setActiveStep] = useState(-1);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [activeId, setActiveId] = useState("prospect");
+  const [animKey, setAnimKey] = useState(0);
+
+  const activeCase = useCases.find((u) => u.id === activeId)!;
+  const DemoComponent = demoComponents[activeId];
+
+  const handleSelect = (id: string) => {
+    setActiveId(id);
+    setAnimKey((k) => k + 1);
+  };
+
+  // Auto-cycle when not interacted
+  const [autoCycle, setAutoCycle] = useState(true);
+  const interacted = useRef(false);
 
   useEffect(() => {
-    if (!isInView || hasStarted) return;
-    setHasStarted(true);
-
-    let stepIndex = 0;
-    const advance = () => {
-      setActiveStep(stepIndex);
-      stepIndex++;
-      if (stepIndex < steps.length) {
-        setTimeout(advance, steps[stepIndex - 1].duration);
-      }
-    };
-    setTimeout(advance, 800);
-  }, [isInView, hasStarted]);
+    if (!isInView || !autoCycle) return;
+    const interval = setInterval(() => {
+      if (interacted.current) return;
+      setActiveId((prev) => {
+        const idx = useCases.findIndex((u) => u.id === prev);
+        const nextIdx = (idx + 1) % useCases.length;
+        return useCases[nextIdx].id;
+      });
+      setAnimKey((k) => k + 1);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isInView, autoCycle]);
 
   return (
-    <section ref={ref} className="relative py-20 sm:py-28 bg-stone-900 overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)`,
-          backgroundSize: "48px 48px",
-        }}
-      />
+    <section ref={ref} className="relative py-20 sm:py-28 bg-stone-50 overflow-hidden">
+      {/* Subtle radial bg */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(120,113,108,0.04) 0%, transparent 60%)" }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         {/* Header */}
@@ -54,324 +350,98 @@ export default function PromptShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-stone-700 text-stone-400 text-xs font-[family-name:var(--font-mono)] mb-5">
-            <Sparkles className="w-3 h-3 text-yellow-400" />
-            Watch it work
-          </div>
-          <h2 className="font-[family-name:var(--font-instrument)] text-3xl sm:text-4xl lg:text-5xl text-white italic">
-            One prompt. Full pipeline.
+          <p className="text-sm font-[family-name:var(--font-mono)] text-stone-400 tracking-widest uppercase mb-3">
+            Use Cases
+          </p>
+          <h2 className="font-[family-name:var(--font-instrument)] text-3xl sm:text-4xl text-stone-900 italic mb-4">
+            One prompt for anything
           </h2>
+          <p className="text-stone-500 text-lg max-w-lg mx-auto">
+            Type what you need in plain English. Ironclaw handles the rest.
+          </p>
         </motion.div>
 
-        {/* Interactive demo area */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6">
-          {/* Main stage — browser / terminal view */}
-          <div className="bg-stone-800/50 border border-stone-700/50 rounded-2xl overflow-hidden min-h-[400px]">
-            {/* Browser chrome */}
-            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-stone-700/50 bg-stone-800/80">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-stone-600" />
-                <div className="w-2.5 h-2.5 rounded-full bg-stone-600" />
-                <div className="w-2.5 h-2.5 rounded-full bg-stone-600" />
+        {/* Use case pills */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {useCases.map((uc) => {
+            const isActive = uc.id === activeId;
+            return (
+              <button
+                key={uc.id}
+                onClick={() => {
+                  interacted.current = true;
+                  setAutoCycle(false);
+                  handleSelect(uc.id);
+                }}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  isActive
+                    ? "bg-white shadow-md border border-stone-200 text-stone-900"
+                    : "bg-transparent border border-transparent text-stone-500 hover:text-stone-700 hover:bg-white/60"
+                }`}
+              >
+                <uc.icon
+                  className="w-4 h-4"
+                  style={{ color: isActive ? uc.color : undefined }}
+                />
+                {uc.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Demo area */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <div className="bg-white border border-stone-200/70 rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.06)] overflow-hidden">
+            {/* Prompt bar */}
+            <div className="px-5 py-4 border-b border-stone-100 flex items-center gap-3">
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `${activeCase.color}12` }}>
+                <activeCase.icon className="w-3.5 h-3.5" style={{ color: activeCase.color }} />
               </div>
-              <div className="flex-1 flex items-center gap-2 ml-3">
-                <div className="flex items-center gap-1.5 bg-stone-700/60 rounded-lg px-3 py-1 text-[11px] text-stone-400 flex-1 max-w-sm">
-                  <Globe className="w-3 h-3" />
-                  <AnimatePresence mode="wait">
-                    {activeStep >= 1 ? (
-                      <motion.span
-                        key="url"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      >
-                        {activeStep === 1 && "linkedin.com/search/results/people..."}
-                        {activeStep === 2 && "crunchbase.com/lists/series-a-sf"}
-                        {activeStep === 3 && "linkedin.com/in/sarah-chen-42a..."}
-                        {activeStep >= 4 && "linkedin.com/messaging/compose"}
-                        {activeStep >= 5 && "localhost:3100/workspace/founders"}
-                      </motion.span>
-                    ) : (
-                      <motion.span key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                        localhost:3100
-                      </motion.span>
-                    )}
-                  </AnimatePresence>
-                </div>
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={activeCase.id}
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-sm text-stone-700 font-[family-name:var(--font-instrument)] italic flex-1"
+                >
+                  &ldquo;{activeCase.prompt}&rdquo;
+                </motion.p>
+              </AnimatePresence>
+              <div className="flex items-center gap-1 text-[10px] text-stone-400 font-mono shrink-0">
+                <ArrowRight className="w-3 h-3" />
+                Running
+                <motion.span
+                  animate={{ opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 1.2, repeat: Infinity }}
+                >
+                  ...
+                </motion.span>
               </div>
             </div>
 
-            {/* Stage content */}
-            <div className="p-6 min-h-[340px] flex items-center justify-center">
+            {/* Demo content */}
+            <div className="p-5 min-h-[340px] bg-stone-50/50">
               <AnimatePresence mode="wait">
-                {/* Step 0: Prompt */}
-                {activeStep === 0 && (
-                  <motion.div
-                    key="prompt"
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    className="w-full max-w-lg"
-                  >
-                    <div className="bg-stone-700/40 rounded-xl p-4 border border-stone-600/30">
-                      <p className="text-stone-300 text-sm font-[family-name:var(--font-instrument)] italic leading-relaxed">
-                        &ldquo;Find Series A startups in SF, enrich their founders, add them to my CRM, send LinkedIn messages and follow-up emails. Track everything in the pipeline.&rdquo;
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-end mt-3 gap-2">
-                      <motion.div
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 0.6, delay: 1 }}
-                        className="flex items-center gap-1.5 bg-white text-stone-900 px-3 py-1.5 rounded-lg text-xs font-medium"
-                      >
-                        <Send className="w-3 h-3" />
-                        Send
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Step 1: Browser opens */}
-                {activeStep === 1 && (
-                  <motion.div
-                    key="browse"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    className="w-full space-y-3"
-                  >
-                    <div className="flex items-center gap-2 text-stone-400 text-[11px] mb-2">
-                      <Globe className="w-3 h-3 text-blue-400" />
-                      <span>Opening Chrome with your profile — all sessions active</span>
-                    </div>
-                    {/* Fake LinkedIn search results */}
-                    {["Sarah Chen · VP Engineering · Tesla", "Marcus Johnson · Director of Product · Microsoft", "Emily Zhang · Head of AI · Meta", "Alex Johnson · Senior PM · Google"].map((name, i) => (
-                      <motion.div
-                        key={name}
-                        initial={{ opacity: 0, x: -12 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.3 }}
-                        className="flex items-center gap-3 bg-stone-700/30 rounded-lg px-3 py-2 border border-stone-600/20"
-                      >
-                        <div className="w-7 h-7 rounded-full bg-stone-600 shrink-0" />
-                        <span className="text-stone-300 text-xs flex-1">{name}</span>
-                        <UserPlus className="w-3 h-3 text-blue-400" />
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-
-                {/* Step 2: Scraping */}
-                {activeStep === 2 && (
-                  <motion.div
-                    key="scrape"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="w-full"
-                  >
-                    <div className="flex items-center gap-2 text-stone-400 text-[11px] mb-4">
-                      <Search className="w-3 h-3 text-yellow-400" />
-                      <span>Scraping Crunchbase — 127 companies found</span>
-                    </div>
-                    <div className="bg-stone-700/30 rounded-lg border border-stone-600/20 overflow-hidden">
-                      <div className="grid grid-cols-4 gap-px text-[10px] font-[family-name:var(--font-mono)] text-stone-500 px-3 py-1.5 bg-stone-700/40">
-                        <span>Company</span><span>Stage</span><span>Funding</span><span>Location</span>
-                      </div>
-                      {[
-                        ["Nexus AI", "Series A", "$12M", "SF, CA"],
-                        ["Quantum Labs", "Series A", "$8.5M", "SF, CA"],
-                        ["DataForge", "Series A", "$15M", "SF, CA"],
-                        ["CloudPeak", "Series A", "$11M", "SF, CA"],
-                        ["Synthetics.io", "Series A", "$9.2M", "SF, CA"],
-                      ].map((row, i) => (
-                        <motion.div
-                          key={row[0]}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: i * 0.25 }}
-                          className="grid grid-cols-4 gap-px text-[11px] text-stone-300 px-3 py-2 border-t border-stone-700/30"
-                        >
-                          {row.map((cell, j) => (
-                            <span key={j} className={j === 0 ? "font-medium" : "text-stone-400"}>{cell}</span>
-                          ))}
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Step 3: Enriching */}
-                {activeStep === 3 && (
-                  <motion.div
-                    key="enrich"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="w-full space-y-3"
-                  >
-                    <div className="flex items-center gap-2 text-stone-400 text-[11px]">
-                      <Sparkles className="w-3 h-3 text-purple-400" />
-                      <span>Enriching profiles — LinkedIn, email, education</span>
-                    </div>
-                    {[
-                      { name: "Sarah Chen", pct: 100 },
-                      { name: "Marcus Johnson", pct: 100 },
-                      { name: "Emily Zhang", pct: 87 },
-                      { name: "Alex Johnson", pct: 72 },
-                      { name: "James Park", pct: 45 },
-                    ].map((p, i) => (
-                      <motion.div
-                        key={p.name}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: i * 0.2 }}
-                        className="flex items-center gap-3"
-                      >
-                        <span className="text-xs text-stone-300 w-32 truncate">{p.name}</span>
-                        <div className="flex-1 h-1.5 bg-stone-700 rounded-full overflow-hidden">
-                          <motion.div
-                            className="h-full bg-purple-500 rounded-full"
-                            initial={{ width: 0 }}
-                            animate={{ width: `${p.pct}%` }}
-                            transition={{ duration: 0.8, delay: i * 0.2 }}
-                          />
-                        </div>
-                        <span className="text-[10px] text-stone-500 font-mono w-8">{p.pct}%</span>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-
-                {/* Step 4: Sending outreach */}
-                {activeStep === 4 && (
-                  <motion.div
-                    key="outreach"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="w-full space-y-3"
-                  >
-                    <div className="flex items-center gap-2 text-stone-400 text-[11px] mb-2">
-                      <Mail className="w-3 h-3 text-green-400" />
-                      <span>Sending personalised LinkedIn messages & emails</span>
-                    </div>
-                    {[
-                      { name: "Sarah Chen", status: "Message sent", icon: "✓" },
-                      { name: "Marcus Johnson", status: "Connection sent", icon: "✓" },
-                      { name: "Emily Zhang", status: "Email drafted", icon: "✓" },
-                      { name: "Alex Johnson", status: "Sending...", icon: "…" },
-                    ].map((m, i) => (
-                      <motion.div
-                        key={m.name}
-                        initial={{ opacity: 0, x: -8 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.35 }}
-                        className="flex items-center gap-3 bg-stone-700/30 rounded-lg px-3 py-2 border border-stone-600/20"
-                      >
-                        <div className="w-6 h-6 rounded-full bg-stone-600 shrink-0 flex items-center justify-center text-[10px]">
-                          {m.icon === "✓" ? <Check className="w-3 h-3 text-green-400" /> : <span className="text-stone-400">…</span>}
-                        </div>
-                        <span className="text-stone-300 text-xs flex-1">{m.name}</span>
-                        <span className="text-[10px] text-stone-500">{m.status}</span>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-
-                {/* Step 5: CRM updated */}
-                {activeStep >= 5 && (
-                  <motion.div
-                    key="crm"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="w-full text-center space-y-4"
-                  >
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-                      className="w-14 h-14 rounded-2xl bg-green-500/20 border border-green-500/30 flex items-center justify-center mx-auto"
-                    >
-                      <Check className="w-7 h-7 text-green-400" />
-                    </motion.div>
-                    <div>
-                      <p className="text-white text-lg font-semibold">Pipeline complete</p>
-                      <p className="text-stone-400 text-sm mt-1">127 leads scraped · 98% enriched · 42 messages sent</p>
-                    </div>
-                    <div className="flex items-center justify-center gap-6 text-[11px] text-stone-500 pt-2">
-                      <span className="flex items-center gap-1"><BarChart3 className="w-3 h-3" /> CRM updated</span>
-                      <span className="flex items-center gap-1"><Mail className="w-3 h-3" /> Follow-ups scheduled</span>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Before animation starts */}
-                {activeStep < 0 && (
-                  <motion.div
-                    key="idle"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-stone-500 text-sm"
-                  >
-                    Scroll to see the demo →
-                  </motion.div>
-                )}
+                <motion.div
+                  key={`${activeId}-${animKey}`}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <DemoComponent />
+                </motion.div>
               </AnimatePresence>
             </div>
           </div>
-
-          {/* Steps timeline */}
-          <div className="flex flex-col justify-center gap-1">
-            {steps.map((step, i) => {
-              const isActive = i === activeStep;
-              const isDone = i < activeStep;
-              return (
-                <motion.div
-                  key={step.id}
-                  initial={{ opacity: 0, x: 12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                    isActive
-                      ? "bg-white/10 border border-white/10"
-                      : isDone
-                      ? "opacity-60"
-                      : "opacity-30"
-                  }`}
-                >
-                  <div
-                    className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                      isDone
-                        ? "bg-green-500/20 text-green-400"
-                        : isActive
-                        ? "bg-white text-stone-900"
-                        : "bg-stone-700 text-stone-500"
-                    }`}
-                  >
-                    {isDone ? <Check className="w-3 h-3" /> : i + 1}
-                  </div>
-                  <span
-                    className={`text-sm ${
-                      isActive ? "text-white font-medium" : isDone ? "text-stone-400" : "text-stone-600"
-                    }`}
-                  >
-                    {step.label}
-                  </span>
-                  {isActive && (
-                    <motion.div
-                      className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-400"
-                      animate={{ opacity: [1, 0.3, 1] }}
-                      transition={{ duration: 1, repeat: Infinity }}
-                    />
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

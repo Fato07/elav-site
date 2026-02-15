@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ArrowDown } from "lucide-react";
 import { useState } from "react";
 
 const CLAW_ASCII = [
@@ -94,12 +94,22 @@ export default function Hero() {
           AI CRM, hosted locally on your Mac.
         </motion.p>
 
+        {/* Sub-tagline */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="mt-2 text-center text-sm text-stone-400 max-w-md"
+        >
+          Chat with your database. Automate outreach. Enrich leads. All from a single prompt.
+        </motion.p>
+
         {/* Install */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-6"
+          className="mt-7"
         >
           <button onClick={handleCopy} className="install-command group">
             <span>
@@ -107,7 +117,11 @@ export default function Hero() {
               <span className="text-stone-100">npm i -g ironclaw</span>
             </span>
             <span className="text-stone-500 group-hover:text-stone-300 transition-colors">
-              {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+              {copied ? (
+                <Check className="w-4 h-4 text-green-400" />
+              ) : (
+                <Copy className="w-4 h-4" />
+              )}
             </span>
           </button>
         </motion.div>
@@ -120,6 +134,21 @@ export default function Hero() {
         >
           opens at <span className="text-stone-500">localhost:3100</span>
         </motion.p>
+
+        {/* Scroll hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="mt-10"
+        >
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowDown className="w-4 h-4 text-stone-300" />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -20,7 +20,7 @@
 }
 
 /* ============================================================
-   Iron Shimmer Animation
+   Animations
    ============================================================ */
 
 @keyframes iron-shimmer {
@@ -73,24 +73,6 @@
   }
 }
 
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes scan-line {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
-
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -134,6 +116,8 @@ body {
   background: #fafaf9;
   color: #1c1917;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
@@ -177,7 +161,7 @@ body {
 
 .terminal-window {
   background: #1c1917;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25), 0 8px 32px rgba(0, 0, 0, 0.15);
   animation: terminal-glow 4s ease-in-out infinite;
@@ -185,7 +169,7 @@ body {
 
 .terminal-header {
   background: #292524;
-  padding: 12px 16px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -198,7 +182,7 @@ body {
 }
 
 .terminal-body {
-  padding: 20px 24px;
+  padding: 22px 26px;
   font-family: var(--font-mono);
   font-size: 14px;
   line-height: 1.7;
@@ -243,7 +227,7 @@ body {
 .install-command {
   background: #1c1917;
   border: 1px solid #292524;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 16px 24px;
   font-family: var(--font-mono);
   font-size: 16px;
@@ -252,13 +236,15 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .install-command:hover {
   border-color: #44403c;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  transform: translateY(-1px);
 }
 
 /* ============================================================
@@ -268,7 +254,7 @@ body {
 .feature-card {
   background: white;
   border: 1px solid #e7e5e4;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 32px;
   transition: all 0.3s ease;
 }
@@ -320,11 +306,24 @@ body {
 }
 
 /* ============================================================
+   Drag and Drop
+   ============================================================ */
+
+[draggable="true"] {
+  -webkit-user-drag: element;
+}
+
+[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+/* ============================================================
    Scrollbar
    ============================================================ */
 
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -338,4 +337,22 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a29e;
+}
+
+/* ============================================================
+   Better Focus States
+   ============================================================ */
+
+*:focus-visible {
+  outline: 2px solid #78716c;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Smooth Image Rendering
+   ============================================================ */
+
+img {
+  image-rendering: -webkit-optimize-contrast;
 }

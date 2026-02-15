@@ -14,10 +14,20 @@ export default function InstallCTA() {
   };
 
   return (
-    <section id="install" className="relative py-32 sm:py-40 bg-white overflow-hidden">
-      {/* Subtle grid */}
+    <section
+      id="install"
+      className="relative py-32 sm:py-40 bg-white overflow-hidden"
+    >
+      {/* Gradient background */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 50%, rgba(120,113,108,0.04) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.02]"
         style={{
           backgroundImage: `
             linear-gradient(rgba(0,0,0,0.4) 1px, transparent 1px),
@@ -81,28 +91,25 @@ export default function InstallCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-12 text-sm font-[family-name:var(--font-mono)] text-stone-500"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12"
         >
-          <span className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center text-xs text-stone-600 font-semibold">
-              1
-            </span>
-            npm i -g ironclaw
-          </span>
-          <ArrowRight className="w-4 h-4 text-stone-300 hidden sm:block" />
-          <span className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center text-xs text-stone-600 font-semibold">
-              2
-            </span>
-            ironclaw onboard
-          </span>
-          <ArrowRight className="w-4 h-4 text-stone-300 hidden sm:block" />
-          <span className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center text-xs text-stone-600 font-semibold">
-              3
-            </span>
-            ironclaw gateway start
-          </span>
+          {[
+            { step: "1", label: "npm i -g ironclaw" },
+            { step: "2", label: "ironclaw onboard" },
+            { step: "3", label: "ironclaw gateway start" },
+          ].map((item, i) => (
+            <div key={item.step} className="flex items-center gap-4 sm:gap-6">
+              <span className="flex items-center gap-2 text-sm font-[family-name:var(--font-mono)] text-stone-500">
+                <span className="w-7 h-7 rounded-full bg-stone-100 flex items-center justify-center text-xs text-stone-600 font-bold">
+                  {item.step}
+                </span>
+                {item.label}
+              </span>
+              {i < 2 && (
+                <ArrowRight className="w-4 h-4 text-stone-300 hidden sm:block" />
+              )}
+            </div>
+          ))}
         </motion.div>
 
         {/* Actions */}
@@ -117,7 +124,7 @@ export default function InstallCTA() {
             href="https://github.com/DenchHQ/ironclaw"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 hover:shadow-lg transition-all"
           >
             <Github className="w-4 h-4" />
             View on GitHub
@@ -126,7 +133,7 @@ export default function InstallCTA() {
             href="https://github.com/DenchHQ/ironclaw#readme"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-stone-200 text-stone-700 text-sm font-medium rounded-full hover:border-stone-300 hover:bg-stone-50 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-stone-200 text-stone-700 text-sm font-medium rounded-full hover:border-stone-300 hover:bg-stone-50 transition-all"
           >
             Read the Docs
             <ArrowRight className="w-4 h-4" />
