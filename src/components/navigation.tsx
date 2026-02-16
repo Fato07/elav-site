@@ -21,12 +21,28 @@ export default function Navigation() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-13 flex items-center justify-between">
-        <a
-          href="#"
-          className="font-[family-name:var(--font-mono)] text-sm font-semibold tracking-wider text-stone-900"
-        >
-          IRONCLAW
-        </a>
+        <div className="flex items-center gap-1.5">
+          <img src="/favicon.svg" alt="Ironclaw" className="w-7 h-7" />
+          <div className="flex flex-col">
+            <a
+              href="#"
+              className="font-[family-name:var(--font-mono)] text-base font-semibold tracking-wider text-stone-900 leading-none"
+            >
+              IRONCLAW
+            </a>
+            <span className="text-[10px] font-medium text-stone-500 leading-none">
+              by{" "}
+              <a
+                href="https://dench.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-stone-600 transition-colors"
+              >
+                Dench.com
+              </a>
+            </span>
+          </div>
+        </div>
 
         <div className="flex items-center gap-3">
           <a
