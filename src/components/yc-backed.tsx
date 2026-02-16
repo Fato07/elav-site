@@ -30,23 +30,6 @@ export default function YCBacked() {
           <h2 className="font-[family-name:var(--font-instrument)] text-2xl sm:text-3xl lg:text-4xl text-stone-900 italic font-light max-w-2xl leading-snug">
             Agentic workflows that let you focus on what matters
           </h2>
-
-          <div className="flex items-center gap-8 text-stone-400 text-sm">
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl font-bold text-stone-800">200+</span>
-              <span className="text-[11px]">Active users</span>
-            </div>
-            <div className="w-px h-8 bg-stone-200" />
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl font-bold text-stone-800">50K+</span>
-              <span className="text-[11px]">Leads enriched</span>
-            </div>
-            <div className="w-px h-8 bg-stone-200" />
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl font-bold text-stone-800">98%</span>
-              <span className="text-[11px]">Enrichment rate</span>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
