@@ -471,11 +471,11 @@ export default function AppDemo() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <div
-            className="relative w-full"
+            className="relative w-full flex justify-center"
             style={{ height: baseHeight * scale }}
           >
             <div
-              className="absolute origin-top-left"
+              className="absolute origin-top"
               style={{
                 width: baseWidth,
                 height: baseHeight,
