@@ -91,7 +91,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="mt-5 text-center font-[family-name:var(--font-instrument)] text-xl sm:text-2xl lg:text-3xl text-stone-600 italic"
         >
-          AI CRM, hosted locally on your Mac.<br />Built on OpenClaw. By <a href="https://dench.com" target="_blank" rel="noopener noreferrer" className="underline decoration-stone-400 text-stone-600">Dench.com</a>
+          AI CRM, hosted locally on your Mac.<br />Built on OpenClaw.
         </motion.p>
 
 
