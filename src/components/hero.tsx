@@ -57,7 +57,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative pt-24 pb-8 sm:pt-32 sm:pb-12 flex flex-col items-center overflow-hidden bg-stone-50">
+    <section className="relative pt-24 pb-0 sm:pt-32 sm:pb-0 flex flex-col items-center overflow-hidden bg-stone-50">
       {/* Claw marks background */}
       <div
         className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
@@ -91,18 +91,9 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="mt-5 text-center font-[family-name:var(--font-instrument)] text-xl sm:text-2xl lg:text-3xl text-stone-600 italic"
         >
-          AI CRM, hosted locally on your Mac.
+          AI CRM, hosted locally on your Mac.<br />Built on OpenClaw. By <a href="https://dench.com" target="_blank" rel="noopener noreferrer" className="underline decoration-stone-400 text-stone-600">Dench.com</a>
         </motion.p>
 
-        {/* Sub-tagline */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          className="mt-2 text-center text-sm text-stone-400 max-w-md"
-        >
-          Chat with your database. Automate outreach. Enrich leads. All from a single prompt.
-        </motion.p>
 
         {/* Install */}
         <motion.div
@@ -111,10 +102,10 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-7"
         >
-          <button onClick={handleCopy} className="bg-stone-900 border border-stone-800 rounded-[10px] px-[18px] py-2.5 font-[family-name:var(--font-mono)] text-sm text-stone-50 flex items-center justify-between gap-3.5 cursor-pointer transition-all duration-300 hover:border-stone-700 hover:-translate-y-px hover:shadow-[0_4px_24px_rgba(0,0,0,0.2),0_0_0_1px_rgba(255,255,255,0.05)_inset] group">
+          <button onClick={handleCopy} className="bg-stone-800/90 border border-stone-800 rounded-[12px] px-6 py-3.5 font-mono text-base ring-2 ring-stone-200 ring-offset-4 ring-offset-stone-50 text-stone-50 flex items-center justify-between gap-3.5 cursor-pointer transition-all duration-300 hover:border-stone-700 group">
             <span>
               <span className="text-stone-500">$</span>{" "}
-              <span className="text-stone-100">npm i -g ironclaw</span>
+              <span className="text-stone-50">npm i -g ironclaw</span>
             </span>
             <span className="text-stone-500 group-hover:text-stone-300 transition-colors">
               {copied ? (
@@ -135,20 +126,6 @@ export default function Hero() {
           opens at <span className="text-stone-500">localhost:3100</span>
         </motion.p>
 
-        {/* Scroll hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-10"
-        >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ArrowDown className="w-4 h-4 text-stone-300" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

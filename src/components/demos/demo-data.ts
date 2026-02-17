@@ -12,26 +12,26 @@ export type Founder = {
 };
 
 export const founders: Founder[] = [
-  { id: "1", fullName: "Veer Shah", company: "Cumulus Labs", companyColor: "#3b82f6", linkedin: "https://linkedin.com/in/veer-shah-62...", notes: "Veer studied Computer Science at the Univ...", education: "University of Wi...", status: "New" },
-  { id: "2", fullName: "Leo Gierhake", company: "Laurence", companyColor: "#8b5cf6", linkedin: "https://linkedin.com/in/leo-gierhake-...", notes: "Researcher at Jump Trading, building quan...", education: "ETH Zurich", status: "Contacted" },
-  { id: "3", fullName: "Vincent Chen", company: "Panta", companyColor: "#f59e0b", linkedin: "https://linkedin.com/in/zihong-chen", notes: "Founder @ Panta (W26). Building a comme...", education: "BU", status: "Qualified" },
-  { id: "4", fullName: "Omar Elamin", company: "Caretta", companyColor: "#10b981", linkedin: "https://www.linkedin.com/in/omarelamin", notes: "Co-Founder & CTO of Caretta. Ex-TU Delft. ...", education: "---", status: "New" },
-  { id: "5", fullName: "Oncel Ozgul", company: "Patientdesk.ai", companyColor: "#6366f1", linkedin: "https://www.linkedin.com/in/oncelozgul", notes: "Co-founder @ Patientdesk.ai", education: "---", status: "Contacted" },
-  { id: "6", fullName: "Oded Falik", company: "Strand AI", companyColor: "#ec4899", linkedin: "https://www.linkedin.com/in/oded-falik/", notes: "Cofounder & CTO at Strand AI", education: "---", status: "New" },
-  { id: "7", fullName: "Vincent Jeltsch", company: "sitefire", companyColor: "#14b8a6", linkedin: "https://www.linkedin.com/in/vincent-jeltsch/", notes: "Co-Founder & CTO @sitefire.ai I ran a mak...", education: "BU", status: "Qualified" },
-  { id: "8", fullName: "Berke Argin", company: "Compresr", companyColor: "#f97316", linkedin: "https://www.linkedin.com/in/arginberke/", notes: "CAIO @ compresr.ai. On a mission to make ...", education: "---", status: "Contacted" },
-  { id: "9", fullName: "Henry Birge-Lee", company: "Crosslayer Labs", companyColor: "#0ea5e9", linkedin: "https://www.linkedin.com/in/henry-birge-le...", notes: "I am am innovator in web and network secu...", education: "---", status: "New" },
-  { id: "10", fullName: "Jordon Kashanchi", company: "Visibl Semiconductors", companyColor: "#a855f7", linkedin: "https://www.linkedin.com/in/jordon-kashan...", notes: "Co-founder & CTO of Visibl Semiconductor...", education: "UT Austin", status: "Contacted" },
-  { id: "11", fullName: "Ian Wang", company: "Axis", companyColor: "#ef4444", linkedin: "https://www.linkedin.com/in/ian-wang-m1n1", notes: "Yale '25 Interested in trading stuff", education: "Yale", status: "New" },
-  { id: "12", fullName: "Kayra Bahadir", company: "Caretta", companyColor: "#10b981", linkedin: "https://www.linkedin.com/in/kayrabahadir", notes: "Co-founder & CEO of Caretta (W26)", education: "---", status: "Qualified" },
-  { id: "13", fullName: "Paul Grech", company: "OctaPulse", companyColor: "#0891b2", linkedin: "https://www.linkedin.com/in/paul-l-grech-b...", notes: "Building the future of autonomous aquacult...", education: "BU", status: "Contacted" },
-  { id: "14", fullName: "Rushil Agarwal", company: "Human Archive", companyColor: "#7c3aed", linkedin: "https://www.linkedin.com/in/rushilagarwal2...", notes: "building multimodal real-world datasets for ...", education: "UC Berkeley", status: "New" },
-  { id: "15", fullName: "Owen Botkin", company: "Forum", companyColor: "#dc2626", linkedin: "https://www.linkedin.com/in/owen-botkin", notes: "Co-founder of Forum. Prev L/S equities @ ...", education: "---", status: "Contacted" },
-  { id: "16", fullName: "Vansh Ramani", company: "RamAIn", companyColor: "#059669", linkedin: "https://www.linkedin.com/in/ramanivansh/", notes: "Pursuing CS at IIT Delhi. Former researcher...", education: "Carnegie Mellon", status: "New" },
-  { id: "17", fullName: "Arne Strickmann", company: "Emdash", companyColor: "#d946ef", linkedin: "https://www.linkedin.com/in/arnestrickmann", notes: "Co-Founder of Emdash (W26). Prev. Thrive...", education: "---", status: "Qualified" },
-  { id: "18", fullName: "Zinny Weli", company: "RoboDock", companyColor: "#2563eb", linkedin: "https://www.linkedin.com/in/zinnyweli", notes: "Zinny Weli is co-founder and CEO of Robo...", education: "Stanford; Univer...", status: "Contacted" },
-  { id: "19", fullName: "Elvin Fu", company: "CodeWisp", companyColor: "#8b5cf6", linkedin: "https://www.linkedin.com/in/fuelvin/", notes: "Making games since age 10. Built mobile an...", education: "BU", status: "New" },
-  { id: "20", fullName: "Filip Balucha", company: "Terminal Use", companyColor: "#f59e0b", linkedin: "https://www.linkedin.com/in/filip-balucha/", notes: "Enabling long-running background agents...", education: "---", status: "Contacted" },
+  { id: "1", fullName: "Veer Shah", company: "Cumulus Labs", companyColor: "#5b9bd5", linkedin: "https://linkedin.com/in/veer-shah-62...", notes: "Veer studied Computer Science at the Univ...", education: "University of Wi...", status: "New" },
+  { id: "2", fullName: "Leo Gierhake", company: "Laurence", companyColor: "#9b7ec8", linkedin: "https://linkedin.com/in/leo-gierhake-...", notes: "Researcher at Jump Trading, building quan...", education: "ETH Zurich", status: "Contacted" },
+  { id: "3", fullName: "Vincent Chen", company: "Panta", companyColor: "#d4a54a", linkedin: "https://linkedin.com/in/zihong-chen", notes: "Founder @ Panta (W26). Building a comme...", education: "BU", status: "Qualified" },
+  { id: "4", fullName: "Omar Elamin", company: "Caretta", companyColor: "#4db890", linkedin: "https://www.linkedin.com/in/omarelamin", notes: "Co-Founder & CTO of Caretta. Ex-TU Delft. ...", education: "---", status: "New" },
+  { id: "5", fullName: "Oncel Ozgul", company: "Patientdesk.ai", companyColor: "#7b83cc", linkedin: "https://www.linkedin.com/in/oncelozgul", notes: "Co-founder @ Patientdesk.ai", education: "---", status: "Contacted" },
+  { id: "6", fullName: "Oded Falik", company: "Strand AI", companyColor: "#d47a95", linkedin: "https://www.linkedin.com/in/oded-falik/", notes: "Cofounder & CTO at Strand AI", education: "---", status: "New" },
+  { id: "7", fullName: "Vincent Jeltsch", company: "sitefire", companyColor: "#4db8a8", linkedin: "https://www.linkedin.com/in/vincent-jeltsch/", notes: "Co-Founder & CTO @sitefire.ai I ran a mak...", education: "BU", status: "Qualified" },
+  { id: "8", fullName: "Berke Argin", company: "Compresr", companyColor: "#d4915a", linkedin: "https://www.linkedin.com/in/arginberke/", notes: "CAIO @ compresr.ai. On a mission to make ...", education: "---", status: "Contacted" },
+  { id: "9", fullName: "Henry Birge-Lee", company: "Crosslayer Labs", companyColor: "#4ba8c9", linkedin: "https://www.linkedin.com/in/henry-birge-le...", notes: "I am am innovator in web and network secu...", education: "---", status: "New" },
+  { id: "10", fullName: "Jordon Kashanchi", company: "Visibl Semiconductors", companyColor: "#a87cc5", linkedin: "https://www.linkedin.com/in/jordon-kashan...", notes: "Co-founder & CTO of Visibl Semiconductor...", education: "UT Austin", status: "Contacted" },
+  { id: "11", fullName: "Ian Wang", company: "Axis", companyColor: "#d47272", linkedin: "https://www.linkedin.com/in/ian-wang-m1n1", notes: "Yale '25 Interested in trading stuff", education: "Yale", status: "New" },
+  { id: "12", fullName: "Kayra Bahadir", company: "Caretta", companyColor: "#4db890", linkedin: "https://www.linkedin.com/in/kayrabahadir", notes: "Co-founder & CEO of Caretta (W26)", education: "---", status: "Qualified" },
+  { id: "13", fullName: "Paul Grech", company: "OctaPulse", companyColor: "#4a9ab5", linkedin: "https://www.linkedin.com/in/paul-l-grech-b...", notes: "Building the future of autonomous aquacult...", education: "BU", status: "Contacted" },
+  { id: "14", fullName: "Rushil Agarwal", company: "Human Archive", companyColor: "#8b6ec0", linkedin: "https://www.linkedin.com/in/rushilagarwal2...", notes: "building multimodal real-world datasets for ...", education: "UC Berkeley", status: "New" },
+  { id: "15", fullName: "Owen Botkin", company: "Forum", companyColor: "#c96a6a", linkedin: "https://www.linkedin.com/in/owen-botkin", notes: "Co-founder of Forum. Prev L/S equities @ ...", education: "---", status: "Contacted" },
+  { id: "16", fullName: "Vansh Ramani", company: "RamAIn", companyColor: "#3daa80", linkedin: "https://www.linkedin.com/in/ramanivansh/", notes: "Pursuing CS at IIT Delhi. Former researcher...", education: "Carnegie Mellon", status: "New" },
+  { id: "17", fullName: "Arne Strickmann", company: "Emdash", companyColor: "#c07cc9", linkedin: "https://www.linkedin.com/in/arnestrickmann", notes: "Co-Founder of Emdash (W26). Prev. Thrive...", education: "---", status: "Qualified" },
+  { id: "18", fullName: "Zinny Weli", company: "RoboDock", companyColor: "#5585cc", linkedin: "https://www.linkedin.com/in/zinnyweli", notes: "Zinny Weli is co-founder and CEO of Robo...", education: "Stanford; Univer...", status: "Contacted" },
+  { id: "19", fullName: "Elvin Fu", company: "CodeWisp", companyColor: "#9b7ec8", linkedin: "https://www.linkedin.com/in/fuelvin/", notes: "Making games since age 10. Built mobile an...", education: "BU", status: "New" },
+  { id: "20", fullName: "Filip Balucha", company: "Terminal Use", companyColor: "#d4a54a", linkedin: "https://www.linkedin.com/in/filip-balucha/", notes: "Enabling long-running background agents...", education: "---", status: "Contacted" },
 ];
 
 // Sidebar file tree items
@@ -61,6 +61,7 @@ export type ChatMessage = {
   content: string;
   thinking?: string;
   isCode?: boolean;
+  isSql?: boolean;
   isReport?: boolean;
   delay: number; // ms from start
 };
@@ -75,13 +76,9 @@ export const chatMessages: ChatMessage[] = [
   {
     id: "2",
     role: "tool",
-    content: `duckdb workspace.duckdb "SELECT 'Status', COUNT(*) FROM v_founders GROUP BY 'Status' ORDER BY count DESC"
-
-New        | 89
-Contacted  | 67
-Qualified  | 31
-Converted  | 13`,
+    content: `duckdb workspace.duckdb "SELECT 'Status', COUNT(*) FROM v_founders GROUP BY 'Status' ORDER BY count DESC"\n\nNew        | 89\nContacted  | 67\nQualified  | 31\nConverted  | 13`,
     isCode: true,
+    isSql: true,
     delay: 1200,
   },
   {
@@ -98,7 +95,7 @@ Converted  | 13`,
   → LinkedIn URLs: 196 found (98%)
   → Education: 144 found (72%)
   → Company info: 200/200 (100%)`,
-    isCode: true,
+    isCode: false,
     delay: 4000,
   },
   {
