@@ -33,7 +33,7 @@ export default function Home() {
         <AnalyticsDemo />
         {/* 7. Pipeline — kanban */}
         <KanbanDemo />
-        {/* 8. Depth — docs, reports, cron */}
+        {/* 8. Depth — reports, cron */}
         <DocumentDemo />
         {/* 9. Extensibility — skills */}
         <SkillsStore />

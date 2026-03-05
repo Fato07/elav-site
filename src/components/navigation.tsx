@@ -25,12 +25,12 @@ export default function Navigation() {
           href="#"
           className="font-[family-name:var(--font-mono)] text-sm font-semibold tracking-wider text-stone-900"
         >
-          IRONCLAW
+          DENCHCLAW
         </a>
 
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/DenchHQ/ironclaw"
+            href="https://github.com/DenchHQ/denchclaw"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-sm text-stone-500 hover:text-stone-900 transition-colors"
@@ -39,7 +39,7 @@ export default function Navigation() {
             <span className="hidden sm:inline">GitHub</span>
           </a>
           <a
-            href="https://github.com/DenchHQ/ironclaw"
+            href="https://github.com/DenchHQ/denchclaw"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-900 text-white text-xs font-medium rounded-full hover:bg-stone-800 transition-colors"

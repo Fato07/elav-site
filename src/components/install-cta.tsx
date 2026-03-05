@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Copy, Check, Github, ArrowRight } from "lucide-react";
+import { Copy, Check, Github } from "lucide-react";
 import { useState } from "react";
 
 export default function InstallCTA() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText("npm i -g ironclaw");
+    await navigator.clipboard.writeText("npx denchclaw");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -48,7 +48,7 @@ export default function InstallCTA() {
             Get Started
           </p>
           <h2 className="font-[family-name:var(--font-instrument)] text-4xl sm:text-5xl text-stone-900 italic mb-6">
-            Install Ironclaw
+            Install DenchClaw
           </h2>
           <p className="text-stone-500 text-lg mb-10 max-w-md mx-auto">
             One command. Node 22+. Opens at{" "}
@@ -73,7 +73,7 @@ export default function InstallCTA() {
           >
             <span>
               <span className="text-stone-500">$</span>{" "}
-              <span className="text-stone-100">npm i -g ironclaw</span>
+              <span className="text-stone-100">npx denchclaw</span>
             </span>
             <span className="text-stone-500 group-hover:text-stone-300 transition-colors">
               {copied ? (
@@ -85,30 +85,25 @@ export default function InstallCTA() {
           </button>
         </motion.div>
 
-        {/* Steps */}
+        {/* Highlights */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12"
+          className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12"
         >
           {[
-            { step: "1", label: "npm i -g ironclaw" },
-            { step: "2", label: "ironclaw onboard" },
-            { step: "3", label: "ironclaw gateway start" },
-          ].map((item, i) => (
-            <div key={item.step} className="flex items-center gap-4 sm:gap-6">
-              <span className="flex items-center gap-2 text-sm font-[family-name:var(--font-mono)] text-stone-500">
-                <span className="w-7 h-7 rounded-full bg-stone-100 flex items-center justify-center text-xs text-stone-600 font-bold">
-                  {item.step}
-                </span>
-                {item.label}
-              </span>
-              {i < 2 && (
-                <ArrowRight className="w-4 h-4 text-stone-300 hidden sm:block" />
-              )}
-            </div>
+            "Powered by OpenClaw",
+            "Local-first by default",
+            "Extensible with skills",
+          ].map((label) => (
+            <span
+              key={label}
+              className="px-3.5 py-1.5 rounded-full border border-stone-200 bg-stone-50 text-xs sm:text-sm font-[family-name:var(--font-mono)] text-stone-600"
+            >
+              {label}
+            </span>
           ))}
         </motion.div>
 
@@ -118,25 +113,16 @@ export default function InstallCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex items-center justify-center"
         >
           <a
-            href="https://github.com/DenchHQ/ironclaw"
+            href="https://github.com/DenchHQ/denchclaw"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 hover:shadow-lg transition-all"
           >
             <Github className="w-4 h-4" />
             View on GitHub
-          </a>
-          <a
-            href="https://github.com/DenchHQ/ironclaw#readme"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-stone-200 text-stone-700 text-sm font-medium rounded-full hover:border-stone-300 hover:bg-stone-50 transition-all"
-          >
-            Read the Docs
-            <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
       </div>

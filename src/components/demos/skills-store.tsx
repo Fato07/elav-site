@@ -26,7 +26,7 @@ const skills: {
     desc: "CRM workflow automation, lead scoring, pipeline management, and deal tracking",
     tags: ["crm", "sales"],
     trending: true,
-    url: "https://skills.sh/denchhq/ironclaw-skills/crm-automation",
+    url: "https://skills.sh/denchhq/denchclaw-skills/crm-automation",
   },
   {
     name: "linkedin-outreach",
@@ -35,7 +35,7 @@ const skills: {
     desc: "Automated LinkedIn prospecting, connection requests, and follow-up sequences",
     tags: ["linkedin", "sales"],
     trending: true,
-    url: "https://skills.sh/denchhq/ironclaw-skills/linkedin-outreach",
+    url: "https://skills.sh/denchhq/denchclaw-skills/linkedin-outreach",
   },
   {
     name: "lead-enrichment",
@@ -44,7 +44,7 @@ const skills: {
     desc: "Enrich contacts with LinkedIn, email, company data, and social profiles",
     tags: ["crm", "sales"],
     trending: true,
-    url: "https://skills.sh/denchhq/ironclaw-skills/lead-enrichment",
+    url: "https://skills.sh/denchhq/denchclaw-skills/lead-enrichment",
   },
   {
     name: "email-sequences",
@@ -53,7 +53,7 @@ const skills: {
     desc: "Multi-step cold email campaigns with personalisation and A/B testing",
     tags: ["email", "sales"],
     trending: true,
-    url: "https://skills.sh/denchhq/ironclaw-skills/email-sequences",
+    url: "https://skills.sh/denchhq/denchclaw-skills/email-sequences",
   },
   {
     name: "sales-pipeline",
@@ -62,7 +62,7 @@ const skills: {
     desc: "Track deals through stages with automated status updates and forecasting",
     tags: ["crm", "sales"],
     trending: false,
-    url: "https://skills.sh/denchhq/ironclaw-skills/sales-pipeline",
+    url: "https://skills.sh/denchhq/denchclaw-skills/sales-pipeline",
   },
   {
     name: "agent-browser",

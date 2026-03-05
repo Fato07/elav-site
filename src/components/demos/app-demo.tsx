@@ -104,7 +104,7 @@ function DemoSidebar() {
           </div>
           <div>
             <div className="text-xs font-semibold text-stone-800">Workspace</div>
-            <div className="text-[10px] text-stone-400">Ironclaw</div>
+            <div className="text-[10px] text-stone-400">DenchClaw</div>
           </div>
         </div>
       </div>
@@ -423,7 +423,7 @@ function ChatPanel({ animate }: { animate: boolean }) {
       {/* Input */}
       <div className="border-t border-stone-200/40 p-2">
         <div className="bg-stone-50 rounded-xl px-3 py-2 text-[12px] text-stone-400">
-          Message Ironclaw...
+          Message DenchClaw...
         </div>
       </div>
     </div>
@@ -496,7 +496,7 @@ export default function AppDemo() {
                     <span className="text-stone-700 font-medium">founders</span>
                   </div>
                   <div className="flex-1" />
-                  <span className="text-[10px] text-stone-400 font-mono">ironclaw.sh</span>
+                  <span className="text-[10px] text-stone-400 font-mono">denchclaw.sh</span>
                 </div>
 
                 {/* Content area */}

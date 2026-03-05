@@ -10,32 +10,30 @@ interface TerminalLine {
 }
 
 const terminalLines: TerminalLine[] = [
-  { type: "comment", text: "# Install ironclaw globally" },
+  { type: "comment", text: "# Bootstrap DenchClaw (onboard + gateway + web UI)" },
   { type: "prompt", text: "$ " },
-  { type: "command", text: "npm i -g ironclaw", delay: 40 },
+  { type: "command", text: "npx denchclaw", delay: 40 },
   { type: "blank", text: "" },
-  { type: "success", text: "✓ ironclaw@latest installed" },
+  { type: "accent", text: "  ◆ Ensuring OpenClaw CLI is available..." },
+  { type: "accent", text: "  ◆ Running onboard --install-daemon (profile: dench)" },
+  { type: "accent", text: "  ◆ Seeding workspace...          ~/.openclaw-dench/workspace/workspace.duckdb" },
+  { type: "accent", text: "  ◆ Verifying gateway health...   ws://127.0.0.1:18789" },
+  { type: "accent", text: "  ◆ Preparing web UI...           http://localhost:3100" },
   { type: "blank", text: "" },
-  { type: "comment", text: "# Run the onboarding wizard" },
-  { type: "prompt", text: "$ " },
-  { type: "command", text: "ironclaw onboard --install-daemon", delay: 30 },
+  { type: "success", text: "Bootstrap checklist" },
+  { type: "success", text: "  [ok] OpenClaw CLI detected" },
+  { type: "success", text: "  [ok] Profile pinned: dench" },
+  { type: "success", text: "  [ok] Gateway reachable at ws://127.0.0.1:18789" },
+  { type: "success", text: "  [ok] Web UI reachable on port 3100" },
   { type: "blank", text: "" },
-  { type: "accent", text: "  ◆ Detecting Node.js...        v22.21.0 ✓" },
-  { type: "accent", text: "  ◆ Creating config...          ~/.openclaw/openclaw.json ✓" },
-  { type: "accent", text: "  ◆ Installing daemon...         launchd ✓" },
-  { type: "success", text: "  ✓ Ironclaw is ready." },
-  { type: "blank", text: "" },
-  { type: "comment", text: "# Start the gateway" },
-  { type: "prompt", text: "$ " },
-  { type: "command", text: "ironclaw gateway start", delay: 35 },
-  { type: "blank", text: "" },
-  { type: "accent", text: "  ◆ Gateway listening on ws://127.0.0.1:18789" },
-  { type: "accent", text: "  ◆ Web UI available at http://localhost:18789" },
-  { type: "success", text: "  ✓ 4 channels connected (WhatsApp, Telegram, Slack, Discord)" },
+  { type: "success", text: "DenchClaw ready" },
+  { type: "output", text: "Profile: dench" },
+  { type: "output", text: "Gateway: reachable" },
+  { type: "output", text: "Web UI: http://localhost:3100" },
   { type: "blank", text: "" },
   { type: "comment", text: "# Talk to your agent" },
   { type: "prompt", text: "$ " },
-  { type: "command", text: 'ironclaw agent --message "Summarize my inbox"', delay: 25 },
+  { type: "command", text: 'denchclaw agent --message "Summarize my inbox"', delay: 25 },
   { type: "blank", text: "" },
   { type: "output", text: '  You have 3 unread messages across WhatsApp and Slack.' },
   { type: "output", text: '  1. Sarah (WhatsApp): "Meeting moved to 3pm"' },
@@ -111,7 +109,7 @@ export default function TerminalDemo() {
             Up and running in seconds
           </h2>
           <p className="text-stone-500 text-lg max-w-lg mx-auto">
-            One command to install. One command to start. Your AI agent is ready to work.
+            One command bootstraps install, onboarding, gateway health, and the web UI.
           </p>
         </motion.div>
 
@@ -127,7 +125,7 @@ export default function TerminalDemo() {
               <div className="terminal-dot" style={{ background: "#FFBD2E" }} />
               <div className="terminal-dot" style={{ background: "#27CA40" }} />
               <span className="ml-4 text-xs text-stone-500 font-[family-name:var(--font-mono)]">
-                ironclaw — terminal
+                denchclaw — terminal
               </span>
             </div>
             <div className="terminal-body min-h-[420px] sm:min-h-[480px] overflow-hidden">

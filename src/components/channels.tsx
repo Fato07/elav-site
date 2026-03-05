@@ -101,7 +101,7 @@ export default function Channels() {
                │
                ▼
   ┌────────────────────────────┐
-  │     Ironclaw Gateway       │
+  │     DenchClaw Gateway      │
   │   ws://127.0.0.1:18789    │
   └─────────────┬──────────────┘
                 │
@@ -109,7 +109,7 @@ export default function Channels() {
     │           │           │
     ▼           ▼           ▼
   AI SDK     Web UI       CLI
-  Engine     (Dench)    (ironclaw)
+  Engine     (Dench)    (denchclaw)
 `}
               </pre>
             </div>

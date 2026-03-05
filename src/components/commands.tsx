@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 
 const commands = [
   {
-    cmd: "ironclaw gateway start",
+    cmd: "denchclaw gateway start",
     desc: "Start the WebSocket gateway and web UI",
   },
   {
-    cmd: 'ironclaw agent --message "..."',
+    cmd: 'denchclaw agent --message "..."',
     desc: "Talk to the agent from your terminal",
   },
   {
-    cmd: "ironclaw message send --to ...",
+    cmd: "denchclaw message send --to ...",
     desc: "Send messages to any connected channel",
   },
   {
-    cmd: "ironclaw channels login",
+    cmd: "denchclaw channels login",
     desc: "Link WhatsApp, Telegram, and more",
   },
   {
-    cmd: "ironclaw agent --thinking high",
+    cmd: "denchclaw agent --thinking high",
     desc: "Enable extended reasoning and chain-of-thought",
   },
   {
-    cmd: "ironclaw doctor",
+    cmd: "denchclaw doctor",
     desc: "Diagnose configuration and security issues",
   },
 ];

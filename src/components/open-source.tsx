@@ -43,8 +43,7 @@ export default function OpenSource() {
             Built in the open
           </h2>
           <p className="text-stone-400 text-lg max-w-lg mx-auto mb-10">
-            Ironclaw is fully open source, built on the OpenClaw framework.
-            Fork it, extend it, make it yours.
+            DenchClaw is your ultimate OpenClaw Orchestration Framework. The right way to use OpenClaw.
           </p>
         </motion.div>
 
@@ -56,7 +55,7 @@ export default function OpenSource() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
           <a
-            href="https://github.com/DenchHQ/ironclaw"
+            href="https://github.com/DenchHQ/denchclaw"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-stone-900 text-sm font-medium rounded-full hover:bg-stone-100 transition-all hover:shadow-lg hover:shadow-white/10"
@@ -65,7 +64,7 @@ export default function OpenSource() {
             View on GitHub
           </a>
           <a
-            href="https://github.com/DenchHQ/ironclaw"
+            href="https://github.com/DenchHQ/denchclaw"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-stone-700 text-stone-300 text-sm font-medium rounded-full hover:border-stone-500 hover:text-white hover:bg-white/5 transition-all"
@@ -75,7 +74,7 @@ export default function OpenSource() {
           </a>
         </motion.div>
 
-        {/* Project structure with improved styling */}
+        {/* OpenClaw snapshot */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,25 +84,21 @@ export default function OpenSource() {
         >
           <div className="rounded-2xl border border-stone-700/50 bg-stone-800/50 backdrop-blur-sm p-6 font-[family-name:var(--font-mono)] text-sm text-left shadow-2xl shadow-black/20">
             <p className="text-stone-500 mb-4 text-xs uppercase tracking-wider font-medium">
-              Project structure
+              OpenClaw
             </p>
             <div className="space-y-1.5 text-stone-400">
               {[
-                { path: "src/", comment: "# Core CLI & gateway" },
-                { path: "apps/web/", comment: "# Next.js web UI" },
-                { path: "apps/ios/", comment: "# iOS companion" },
-                { path: "apps/android/", comment: "# Android companion" },
-                { path: "apps/macos/", comment: "# Menu bar app" },
-                { path: "extensions/", comment: "# Channel plugins" },
-                { path: "skills/", comment: "# Workspace skills" },
+                { label: "Runtime", value: "Local-first agents + gateway" },
+                { label: "Skills", value: "Composable automations and tools" },
+                { label: "Interfaces", value: "Web UI, channels, and APIs" },
               ].map((item) => (
-                <div key={item.path} className="flex items-center gap-2 py-0.5 group">
+                <div key={item.label} className="flex items-center gap-2 py-0.5 group">
                   <span className="text-stone-300 group-hover:text-white transition-colors">
-                    {item.path}
+                    {item.label}
                   </span>
                   <span className="flex-1 border-b border-stone-700/30 border-dotted" />
                   <span className="text-stone-600 text-xs">
-                    {item.comment}
+                    {item.value}
                   </span>
                 </div>
               ))}
@@ -111,7 +106,7 @@ export default function OpenSource() {
           </div>
         </motion.div>
 
-        {/* Built on OpenClaw */}
+        {/* Powered by OpenClaw */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -119,7 +114,7 @@ export default function OpenSource() {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="mt-10 text-stone-500 text-sm flex items-center justify-center gap-2"
         >
-          Built on{" "}
+          Powered by{" "}
           <a
             href="https://github.com/openclaw/openclaw"
             target="_blank"

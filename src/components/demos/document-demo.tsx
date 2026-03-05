@@ -278,7 +278,7 @@ export default function DocumentDemo() {
                   Cron jobs run automatically on schedule
                 </span>
                 <code className="text-stone-500 font-mono bg-white px-2 py-1 rounded-lg border border-stone-200/60 text-[10px]">
-                  ironclaw cron list
+                  denchclaw cron list
                 </code>
               </div>
             </div>

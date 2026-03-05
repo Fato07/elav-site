@@ -10,10 +10,10 @@ export default function Footer() {
           {/* Logo & tagline */}
           <div className="flex flex-col items-center sm:items-start gap-1.5">
             <span className="font-[family-name:var(--font-mono)] text-sm font-semibold tracking-wider text-stone-900">
-              IRONCLAW
+              DENCHCLAW
             </span>
             <span className="text-xs text-stone-400">
-              Built on{" "}
+              Powered by{" "}
               <a
                 href="https://github.com/openclaw/openclaw"
                 target="_blank"
@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-stone-500">
             <a
-              href="https://github.com/DenchHQ/ironclaw"
+              href="https://github.com/DenchHQ/denchclaw"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-stone-900 transition-colors"
@@ -38,20 +38,12 @@ export default function Footer() {
               GitHub
             </a>
             <a
-              href="https://www.npmjs.com/package/ironclaw"
+              href="https://www.npmjs.com/package/denchclaw"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-stone-900 transition-colors"
             >
               npm
-            </a>
-            <a
-              href="https://github.com/DenchHQ/ironclaw#readme"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-stone-900 transition-colors"
-            >
-              Docs
             </a>
           </div>
         </div>
