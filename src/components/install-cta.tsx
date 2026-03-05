@@ -69,7 +69,7 @@ export default function InstallCTA() {
         >
           <button
             onClick={handleCopy}
-            className="install-command text-lg sm:text-xl mx-auto max-w-md w-full group"
+            className="bg-stone-900 border border-stone-800 rounded-[10px] px-[18px] py-2.5 font-[family-name:var(--font-mono)] text-sm text-stone-50 flex items-center justify-between gap-3.5 cursor-pointer transition-all duration-300 hover:border-stone-700 hover:-translate-y-px hover:shadow-[0_4px_24px_rgba(0,0,0,0.2),0_0_0_1px_rgba(255,255,255,0.05)_inset] text-lg sm:text-xl mx-auto max-w-md w-full group"
           >
             <span>
               <span className="text-stone-500">$</span>{" "}

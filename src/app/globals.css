@@ -133,7 +133,7 @@ body {
   font-family: var(--font-mono);
   white-space: pre;
   line-height: 1.15;
-  font-size: clamp(0.35rem, 1.4vw, 1.1rem);
+  font-size: clamp(0.43rem, 1.75vw, 1.35rem);
   background: linear-gradient(
     90deg,
     #374151 0%,
@@ -220,32 +220,6 @@ body {
   margin-left: 2px;
 }
 
-/* ============================================================
-   Install Command
-   ============================================================ */
-
-.install-command {
-  background: #1c1917;
-  border: 1px solid #292524;
-  border-radius: 14px;
-  padding: 16px 24px;
-  font-family: var(--font-mono);
-  font-size: 16px;
-  color: #f5f5f4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.install-command:hover {
-  border-color: #44403c;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-  transform: translateY(-1px);
-}
 
 /* ============================================================
    Feature Card
