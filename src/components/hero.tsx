@@ -35,9 +35,7 @@ export default function Hero() {
         >
           {/* Clean typographic logo */}
           <h1 className="font-[family-name:var(--font-mono)] text-6xl sm:text-8xl lg:text-9xl font-bold tracking-tight text-stone-900 leading-none">
-            <span className="text-stone-900">E</span>
-            <span className="text-stone-700">LAV</span>
-            <span className="text-stone-400 ml-3 sm:ml-4">AI</span>
+            ELAV AI
           </h1>
         </motion.div>
 
