@@ -21,7 +21,14 @@ export default function Navigation() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-13 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
-          <img src="/favicon.svg" alt="Elav AI" className="w-7 h-7" />
+          <svg viewBox="0 0 32 32" className="w-7 h-7" aria-label="Elav AI">
+            <rect width="32" height="32" rx="6" fill="#1c1917"/>
+            <g fill="none" stroke="#d6d3d1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="8,8 8,24 13,24"/>
+              <polyline points="13,24 17,8 21,24"/>
+              <polyline points="21,24 25,8"/>
+            </g>
+          </svg>
           <a
             href="#"
             className="font-[family-name:var(--font-mono)] text-base font-semibold tracking-wider text-stone-900 leading-none"
