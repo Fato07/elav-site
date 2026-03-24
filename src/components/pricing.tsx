@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 const tiers = [
   {
     name: "Starter",
-    setup: "€3,000",
+    setup: "",
     monthly: "€500",
     description: "One AI-powered workflow for your team",
     features: [
@@ -20,7 +20,7 @@ const tiers = [
   },
   {
     name: "Pro",
-    setup: "€5,000",
+    setup: "",
     monthly: "€1,500",
     description: "Full AI operations across your business",
     features: [
@@ -35,7 +35,7 @@ const tiers = [
   },
   {
     name: "Enterprise",
-    setup: "Custom",
+    setup: "",
     monthly: "Custom",
     description: "Dedicated AI ops for large teams",
     features: [
@@ -81,7 +81,7 @@ export default function Pricing() {
           className="text-center mb-6"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-stone-900 text-white text-sm font-[family-name:var(--font-mono)]">
-            🚀 First 20 customers — €0 setup (save €3,000)
+            No setup fees. No contracts. Start today.
           </span>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function Pricing() {
             Simple, transparent pricing
           </h2>
           <p className="text-stone-500 text-lg max-w-md mx-auto">
-            One-time setup fee + predictable monthly cost. No hidden charges.
+            Predictable monthly cost. No setup fees. No hidden charges.
           </p>
         </motion.div>
 
