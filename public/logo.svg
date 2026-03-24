@@ -1,15 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" fill="#1c1917">
-  <!-- E - clean geometric, thin consistent strokes -->
-  <polygon points="0,10 50,10 50,20 12,20 12,45 42,45 42,55 12,55 12,80 50,80 50,90 0,90"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 100" fill="#0a0a0a">
+  <!-- ELAV AI — monolinear geometric sans, A=no crossbar, consistent 10px stroke -->
+  
+  <!-- E -->
+  <rect x="0" y="0" width="10" height="100"/>
+  <rect x="0" y="0" width="52" height="10"/>
+  <rect x="0" y="45" width="42" height="10"/>
+  <rect x="0" y="90" width="52" height="10"/>
+  
   <!-- L -->
-  <polygon points="65,10 77,10 77,80 115,80 115,90 65,90"/>
-  <!-- A (no crossbar — two diagonal strokes meeting at peak, like inverted V) -->
-  <polygon points="140,90 130,90 158,10 170,10 198,90 188,90 164,22"/>
-  <!-- V (mirror of A — two diagonal strokes meeting at bottom) -->
-  <polygon points="205,10 215,10 239,78 263,10 273,10 245,90 233,90"/>
-  <!-- space -->
-  <!-- A (no crossbar) -->
-  <polygon points="320,90 310,90 338,10 350,10 378,90 368,90 344,22"/>
+  <rect x="76" y="0" width="10" height="100"/>
+  <rect x="76" y="90" width="52" height="10"/>
+  
+  <!-- A (no crossbar) — two diagonals meeting at sharp peak -->
+  <polygon points="174,100 164,100 195,0 205,0 236,100 226,100 200,16"/>
+  
+  <!-- V — mirror of A -->
+  <polygon points="252,0 262,0 288,84 314,0 324,0 294,100 282,100"/>
+  
+  <!-- gap 56px -->
+  
+  <!-- A (no crossbar) — identical to first -->
+  <polygon points="416,100 406,100 437,0 447,0 478,100 468,100 442,16"/>
+  
   <!-- I -->
-  <polygon points="395,10 407,10 407,90 395,90"/>
+  <rect x="502" y="0" width="10" height="100"/>
 </svg>
