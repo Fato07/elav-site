@@ -81,7 +81,7 @@ export default function Pricing() {
           className="text-center mb-6"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-stone-900 text-white text-sm font-[family-name:var(--font-mono)]">
-            No setup fees. No contracts. Start today.
+            Monthly subscription or pay-as-you-go. Cancel anytime.
           </span>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function Pricing() {
             Simple, transparent pricing
           </h2>
           <p className="text-stone-500 text-lg max-w-md mx-auto">
-            Predictable monthly cost. No setup fees. No hidden charges.
+            No setup fees. No lock-in. Pay monthly or per task.
           </p>
         </motion.div>
 
