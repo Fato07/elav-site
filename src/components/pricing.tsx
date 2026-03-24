@@ -6,30 +6,30 @@ import { Check } from "lucide-react";
 const tiers = [
   {
     name: "Starter",
-    setup: "€1,500",
-    monthly: "€800",
-    description: "For teams getting started with AI operations",
+    setup: "€3,000",
+    monthly: "€500",
+    description: "One AI-powered workflow for your team",
     features: [
-      "3 active agents",
-      "Up to 500 entities",
-      "Core tool suite",
-      "Weekly reports",
+      "1 automated workflow",
+      "Up to 500 tasks/month",
+      "CRM or lead gen or reporting",
+      "Weekly performance reports",
       "Email support",
     ],
     highlighted: false,
   },
   {
     name: "Pro",
-    setup: "€2,500",
-    monthly: "€2,000",
-    description: "Full power for scaling teams",
+    setup: "€3,000",
+    monthly: "€1,500",
+    description: "Full AI operations across your business",
     features: [
-      "All 7 agents",
-      "1,400+ entities",
-      "Full 117-tool suite",
+      "Multiple workflows",
+      "Unlimited tasks",
+      "Lead gen + CRM + outreach + reporting",
       "Real-time dashboards",
       "Priority support",
-      "Custom workflows",
+      "Custom integrations",
     ],
     highlighted: true,
   },
@@ -37,10 +37,10 @@ const tiers = [
     name: "Enterprise",
     setup: "Custom",
     monthly: "Custom",
-    description: "Tailored for large-scale operations",
+    description: "Dedicated AI ops for large teams",
     features: [
-      "Unlimited entities",
-      "Custom agent training",
+      "Unlimited workflows",
+      "Custom AI training on your data",
       "Dedicated infrastructure",
       "SLA guarantees",
       "On-call support",
@@ -81,7 +81,7 @@ export default function Pricing() {
           className="text-center mb-6"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-stone-900 text-white text-sm font-[family-name:var(--font-mono)]">
-            🎉 2 FREE case study spots — limited availability
+            🚀 First 20 customers — €0 setup (save €3,000)
           </span>
         </motion.div>
 
