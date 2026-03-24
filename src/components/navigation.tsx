@@ -20,8 +20,8 @@ export default function Navigation() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-13 flex items-center justify-between">
-        <a href="#">
-          <img src="/logo.svg" alt="ELAV AI" className="h-5 w-auto" />
+        <a href="#" className="font-[family-name:var(--font-mono)] text-base font-semibold tracking-wider text-stone-900 leading-none">
+          ELAV AI
         </a>
 
         <div className="flex items-center gap-6 text-sm">
