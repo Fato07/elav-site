@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const team = [
   {
     name: "Fathin Dosunmu",
-    role: "Founder & CEO",
+    role: "Co-Founder",
     location: "Tallinn, Estonia",
     bio: "AI engineer. Built agent systems before it was cool. Runs CodesDevs OÜ.",
     initials: "FD",
   },
   {
     name: "Roman Gallardo",
-    role: "GTM & Operations",
+    role: "Co-Founder",
     location: "Buenos Aires → Tallinn",
     bio: "Part-66 qualified. Aviation industry veteran turned AI operations. Closes deals.",
     initials: "RG",
