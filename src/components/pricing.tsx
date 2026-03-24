@@ -144,7 +144,7 @@ export default function Pricing() {
                     </span>
                   )}
                 </div>
-                {tier.setup !== "Custom" && (
+                {tier.setup && tier.setup !== "Custom" && (
                   <p
                     className={`text-xs mt-1 ${
                       tier.highlighted ? "text-stone-500" : "text-stone-400"
