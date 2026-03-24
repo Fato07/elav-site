@@ -10,6 +10,7 @@ import DocumentDemo from "@/components/demos/document-demo";
 import SkillsStore from "@/components/demos/skills-store";
 import TerminalDemo from "@/components/terminal-demo";
 import TrustSection from "@/components/yc-backed";
+import Team from "@/components/team";
 import Pricing from "@/components/pricing";
 import ContactCTA from "@/components/install-cta";
 import Footer from "@/components/footer";
@@ -42,7 +43,9 @@ export default function Home() {
         <TerminalDemo />
         {/* 11. Trust — social proof & stats */}
         <TrustSection />
-        {/* 12. Pricing */}
+        {/* 12. Team */}
+        <Team />
+        {/* 13. Pricing */}
         <Pricing />
         {/* 13. Convert — final CTA */}
         <div className="section-divider" />
