@@ -1,21 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Copy, Check, Github } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
-export default function InstallCTA() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText("npx elav@latest");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
+export default function ContactCTA() {
   return (
     <section
-      id="install"
+      id="contact"
       className="relative py-32 sm:py-40 bg-white overflow-hidden"
     >
       {/* Gradient background */}
@@ -48,41 +39,12 @@ export default function InstallCTA() {
             Get Started
           </p>
           <h2 className="font-[family-name:var(--font-instrument)] text-4xl sm:text-5xl text-stone-900 italic mb-6">
-            Install Elav AI
+            Ready to automate?
           </h2>
           <p className="text-stone-500 text-lg mb-10 max-w-md mx-auto">
-            One command. Node 22+. Opens at{" "}
-            <code className="text-stone-700 bg-stone-100 px-1.5 py-0.5 rounded text-sm font-[family-name:var(--font-mono)]">
-              localhost:3100
-            </code>{" "}
-            in under a minute.
+            Let us show you how Elav AI can transform your operations
+            with autonomous agents working around the clock.
           </p>
-        </motion.div>
-
-        {/* Big install command */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mb-8"
-        >
-          <button
-            onClick={handleCopy}
-            className="bg-stone-900 border border-stone-800 rounded-[10px] px-[18px] py-2.5 font-[family-name:var(--font-mono)] text-sm text-stone-50 flex items-center justify-between gap-3.5 cursor-pointer transition-all duration-300 hover:border-stone-700 hover:-translate-y-px hover:shadow-[0_4px_24px_rgba(0,0,0,0.2),0_0_0_1px_rgba(255,255,255,0.05)_inset] text-lg sm:text-xl mx-auto max-w-md w-full group"
-          >
-            <span>
-              <span className="text-stone-500">$</span>{" "}
-              <span className="text-stone-100">npx elav@latest</span>
-            </span>
-            <span className="text-stone-500 group-hover:text-stone-300 transition-colors">
-              {copied ? (
-                <Check className="w-5 h-5 text-green-400" />
-              ) : (
-                <Copy className="w-5 h-5" />
-              )}
-            </span>
-          </button>
         </motion.div>
 
         {/* Highlights */}
@@ -90,13 +52,13 @@ export default function InstallCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12"
         >
           {[
-            "Powered by OpenClaw",
-            "Local-first by default",
-            "Extensible with skills",
+            "7 Specialized Agents",
+            "117 Tools",
+            "24/7 Autonomous",
           ].map((label) => (
             <span
               key={label}
@@ -112,18 +74,25 @@ export default function InstallCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex items-center justify-center"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col items-center gap-4"
         >
           <a
-            href="https://github.com/Fato07/elav"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 hover:shadow-lg transition-all"
+            href="mailto:atlas@codesdevs.io?subject=Elav AI Demo Request"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 hover:shadow-lg transition-all"
           >
-            <Github className="w-4 h-4" />
-            View on GitHub
+            Book a Demo
+            <ArrowRight className="w-4 h-4" />
           </a>
+          <p className="text-sm text-stone-400">
+            Or email us at{" "}
+            <a
+              href="mailto:atlas@codesdevs.io"
+              className="text-stone-600 underline underline-offset-2 hover:text-stone-900 transition-colors"
+            >
+              atlas@codesdevs.io
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>

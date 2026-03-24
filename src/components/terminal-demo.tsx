@@ -10,35 +10,34 @@ interface TerminalLine {
 }
 
 const terminalLines: TerminalLine[] = [
-  { type: "comment", text: "# Bootstrap Elav AI (onboard + gateway + web UI)" },
+  { type: "comment", text: "# Check agent fleet status" },
   { type: "prompt", text: "$ " },
-  { type: "command", text: "npx elav@latest", delay: 40 },
+  { type: "command", text: "elav fleet status", delay: 40 },
   { type: "blank", text: "" },
-  { type: "accent", text: "  ◆ Ensuring OpenClaw CLI is available..." },
-  { type: "accent", text: "  ◆ Running onboard --install-daemon (profile: elav)" },
-  { type: "accent", text: "  ◆ Seeding workspace...          ~/.openclaw-elav/workspace/workspace.duckdb" },
-  { type: "accent", text: "  ◆ Verifying gateway health...   ws://127.0.0.1:18789" },
-  { type: "accent", text: "  ◆ Preparing web UI...           http://localhost:3100" },
+  { type: "success", text: "Fleet Status — 7 agents online" },
+  { type: "accent", text: "  ● radar-hayden      ACTIVE   researching aerospace targets" },
+  { type: "accent", text: "  ● scout-nova         ACTIVE   enriching 142 leads" },
+  { type: "accent", text: "  ● outreach-kai       IDLE     last run: 12m ago — 28 emails sent" },
+  { type: "accent", text: "  ● analyst-reya       ACTIVE   generating weekly revenue report" },
+  { type: "accent", text: "  ● ops-atlas          ACTIVE   monitoring 3 pipelines" },
+  { type: "accent", text: "  ● comms-echo         IDLE     last run: 8m ago — Slack synced" },
+  { type: "accent", text: "  ● scheduler-vex      ACTIVE   optimizing calendar for next week" },
   { type: "blank", text: "" },
-  { type: "success", text: "Bootstrap checklist" },
-  { type: "success", text: "  [ok] OpenClaw CLI detected" },
-  { type: "success", text: "  [ok] Profile pinned: elav" },
-  { type: "success", text: "  [ok] Gateway reachable at ws://127.0.0.1:18789" },
-  { type: "success", text: "  [ok] Web UI reachable on port 3100" },
+  { type: "output", text: "  Entities: 1,247 tracked  ·  Tools: 117 loaded  ·  Uptime: 99.8%" },
   { type: "blank", text: "" },
-  { type: "success", text: "Elav AI ready" },
-  { type: "output", text: "Profile: elav" },
-  { type: "output", text: "Gateway: reachable" },
-  { type: "output", text: "Web UI: http://localhost:3100" },
-  { type: "blank", text: "" },
-  { type: "comment", text: "# Talk to your agent" },
+  { type: "comment", text: "# Run a targeted research task" },
   { type: "prompt", text: "$ " },
-  { type: "command", text: 'elav agent --message "Summarize my inbox"', delay: 25 },
+  { type: "command", text: "elav agent:radar-hayden research --target aerospace --depth deep", delay: 25 },
   { type: "blank", text: "" },
-  { type: "output", text: '  You have 3 unread messages across WhatsApp and Slack.' },
-  { type: "output", text: '  1. Sarah (WhatsApp): "Meeting moved to 3pm"' },
-  { type: "output", text: '  2. #eng (Slack): Deploy v2.4.1 completed' },
-  { type: "output", text: '  3. Alex (Slack): "PR review needed on auth-flow"' },
+  { type: "accent", text: "  ◆ Scanning 12 data sources..." },
+  { type: "accent", text: "  ◆ Cross-referencing with existing pipeline..." },
+  { type: "accent", text: "  ◆ Enriching company profiles..." },
+  { type: "blank", text: "" },
+  { type: "success", text: "  Research complete" },
+  { type: "output", text: "  Found 34 new companies matching criteria" },
+  { type: "output", text: "  18 decision-makers identified" },
+  { type: "output", text: "  3 high-priority opportunities flagged" },
+  { type: "output", text: "  Results synced to pipeline → /dashboard/radar" },
 ];
 
 export default function TerminalDemo() {
@@ -54,7 +53,6 @@ export default function TerminalDemo() {
 
     for (const line of terminalLines) {
       if (line.type === "command" && line.delay) {
-        // Type out command character by character
         const promptLine = lines[lines.length - 1];
         const baseText = promptLine?.text || "";
 
@@ -96,7 +94,7 @@ export default function TerminalDemo() {
   }, [isInView, hasStarted, runAnimation]);
 
   return (
-    <section className="relative py-24 sm:py-32 bg-stone-50" ref={ref}>
+    <section id="demo" className="relative py-24 sm:py-32 bg-stone-50" ref={ref}>
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -106,10 +104,10 @@ export default function TerminalDemo() {
           className="text-center mb-12"
         >
           <h2 className="font-[family-name:var(--font-instrument)] text-3xl sm:text-4xl text-stone-900 italic mb-4">
-            Up and running in seconds
+            Your agent fleet, always on
           </h2>
           <p className="text-stone-500 text-lg max-w-lg mx-auto">
-            One command bootstraps install, onboarding, gateway health, and the web UI.
+            Seven specialized agents working autonomously — researching, enriching, outreaching, and reporting.
           </p>
         </motion.div>
 
@@ -125,7 +123,7 @@ export default function TerminalDemo() {
               <div className="terminal-dot" style={{ background: "#FFBD2E" }} />
               <div className="terminal-dot" style={{ background: "#27CA40" }} />
               <span className="ml-4 text-xs text-stone-500 font-[family-name:var(--font-mono)]">
-                elav — terminal
+                elav — fleet dashboard
               </span>
             </div>
             <div className="terminal-body min-h-[420px] sm:min-h-[480px] overflow-hidden">

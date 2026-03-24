@@ -9,9 +9,9 @@ import KanbanDemo from "@/components/demos/kanban-demo";
 import DocumentDemo from "@/components/demos/document-demo";
 import SkillsStore from "@/components/demos/skills-store";
 import TerminalDemo from "@/components/terminal-demo";
-import YCBacked from "@/components/yc-backed";
-import OpenSource from "@/components/open-source";
-import InstallCTA from "@/components/install-cta";
+import TrustSection from "@/components/yc-backed";
+import Pricing from "@/components/pricing";
+import ContactCTA from "@/components/install-cta";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Navigation />
       <main>
-        {/* 1. Hook — logo, tagline, install */}
+        {/* 1. Hook — logo, tagline, CTAs */}
         <Hero />
         {/* 2. Show, don't tell — the actual product */}
         <AppDemo />
@@ -37,15 +37,16 @@ export default function Home() {
         <DocumentDemo />
         {/* 9. Extensibility — skills */}
         <SkillsStore />
-        {/* 10. How to install — terminal walkthrough */}
+        {/* 10. Agent fleet in action */}
         <div className="section-divider" />
         <TerminalDemo />
-        {/* 11. Trust — YC, open source */}
-        <YCBacked />
-        <OpenSource />
-        {/* 12. Convert — final CTA */}
+        {/* 11. Trust — social proof & stats */}
+        <TrustSection />
+        {/* 12. Pricing */}
+        <Pricing />
+        {/* 13. Convert — final CTA */}
         <div className="section-divider" />
-        <InstallCTA />
+        <ContactCTA />
       </main>
       <Footer />
     </>

@@ -1,7 +1,5 @@
 "use client";
 
-import { Github } from "lucide-react";
-
 export default function Footer() {
   return (
     <footer className="border-t border-stone-200 bg-stone-50">
@@ -13,44 +11,36 @@ export default function Footer() {
               ELAV AI
             </span>
             <span className="text-xs text-stone-400">
-              Powered by{" "}
-              <a
-                href="https://github.com/openclaw/openclaw"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2 hover:text-stone-600 transition-colors"
-              >
-                OpenClaw
-              </a>{" "}
-              · MIT License
+              Powered by OpenClaw
             </span>
           </div>
 
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-stone-500">
             <a
-              href="https://github.com/Fato07/elav"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-stone-900 transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
-            <a
-              href="https://www.npmjs.com/package/elav"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#demo"
               className="hover:text-stone-900 transition-colors"
             >
-              npm
+              Features
+            </a>
+            <a
+              href="#pricing"
+              className="hover:text-stone-900 transition-colors"
+            >
+              Pricing
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-stone-900 transition-colors"
+            >
+              Contact
             </a>
           </div>
         </div>
 
         <div className="mt-8 pt-6 border-t border-stone-100 text-center">
           <p className="text-xs text-stone-400">
-            &copy; {new Date().getFullYear()} CodesDevs OÜ · Tallinn, Estonia · Built on OpenClaw
+            &copy; {new Date().getFullYear()} CodesDevs OÜ
           </p>
         </div>
       </div>
