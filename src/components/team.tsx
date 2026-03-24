@@ -42,7 +42,7 @@ export default function Team() {
           className="text-center mb-16"
         >
           <p className="text-sm font-[family-name:var(--font-mono)] text-stone-400 tracking-widest uppercase mb-4">
-            Team
+            About Us
           </p>
           <h2 className="font-[family-name:var(--font-instrument)] text-3xl sm:text-4xl lg:text-5xl text-stone-900 italic mb-4">
             Built by operators, not just engineers
