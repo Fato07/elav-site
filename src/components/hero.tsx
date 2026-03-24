@@ -34,7 +34,9 @@ export default function Hero() {
           className="flex flex-col items-center"
         >
           {/* Clean typographic logo */}
-          <img src="/logo.svg" alt="ELAV AI" className="h-14 sm:h-20 lg:h-24 w-auto" />
+          <h1 className="font-[family-name:var(--font-mono)] text-6xl sm:text-8xl lg:text-9xl font-bold tracking-tight text-stone-900 leading-none">
+            ELAV AI
+          </h1>
         </motion.div>
 
         {/* Tagline */}
