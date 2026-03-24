@@ -20,7 +20,7 @@ const tiers = [
   },
   {
     name: "Pro",
-    setup: "€3,000",
+    setup: "€5,000",
     monthly: "€1,500",
     description: "Full AI operations across your business",
     features: [
