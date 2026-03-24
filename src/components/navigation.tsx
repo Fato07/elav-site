@@ -23,25 +23,12 @@ export default function Navigation() {
       <nav className="max-w-6xl mx-auto px-6 h-13 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
           <img src="/favicon.svg" alt="Elav.AI" className="w-7 h-7" />
-          <div className="flex flex-col">
-            <a
-              href="#"
-              className="font-[family-name:var(--font-mono)] text-base font-semibold tracking-wider text-stone-900 leading-none"
-            >
-              ELAV.AI
-            </a>
-            <span className="text-[10px] font-medium text-stone-500 leading-none">
-              by{" "}
-              <a
-                href="https://elav.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-stone-600 transition-colors"
-              >
-                CodesDevs OÜ
-              </a>
-            </span>
-          </div>
+          <a
+            href="#"
+            className="font-[family-name:var(--font-mono)] text-base font-semibold tracking-wider text-stone-900 leading-none"
+          >
+            ELAV AI
+          </a>
         </div>
 
         <div className="flex items-center gap-4">
