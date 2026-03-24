@@ -35,6 +35,22 @@ const tiers = [
     highlighted: true,
     cta: "Book a Demo",
   },
+  {
+    name: "Enterprise",
+    setup: "",
+    monthly: "Let's talk",
+    description: "For teams that need full control",
+    features: [
+      "Everything in Pro",
+      "Dedicated infrastructure",
+      "SLA guarantees",
+      "On-prem / private cloud",
+      "Custom AI training",
+      "White-label options",
+    ],
+    highlighted: false,
+    cta: "Contact Us",
+  },
 ];
 
 export default function Pricing() {
@@ -90,7 +106,7 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {tiers.map((tier, idx) => (
             <motion.div
               key={tier.name}
