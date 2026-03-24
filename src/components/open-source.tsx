@@ -43,7 +43,7 @@ export default function OpenSource() {
             Built in the open
           </h2>
           <p className="text-stone-400 text-lg max-w-lg mx-auto mb-10">
-            DenchClaw is your ultimate OpenClaw Orchestration Framework. The right way to use OpenClaw.
+            Elav.AI is your AI operations team built on the OpenClaw framework. The right way to use OpenClaw.
           </p>
         </motion.div>
 
@@ -55,7 +55,7 @@ export default function OpenSource() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
           <a
-            href="https://github.com/DenchHQ/denchclaw"
+            href="https://github.com/Fato07/elav"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-stone-900 text-sm font-medium rounded-full hover:bg-stone-100 transition-all hover:shadow-lg hover:shadow-white/10"
@@ -64,7 +64,7 @@ export default function OpenSource() {
             View on GitHub
           </a>
           <a
-            href="https://github.com/DenchHQ/denchclaw"
+            href="https://github.com/Fato07/elav"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-stone-700 text-stone-300 text-sm font-medium rounded-full hover:border-stone-500 hover:text-white hover:bg-white/5 transition-all"

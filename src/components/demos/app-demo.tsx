@@ -104,7 +104,7 @@ function DemoSidebar() {
           </div>
           <div>
             <div className="text-xs font-semibold text-stone-800">Workspace</div>
-            <div className="text-[10px] text-stone-400">DenchClaw</div>
+            <div className="text-[10px] text-stone-400">Elav.AI</div>
           </div>
         </div>
       </div>
@@ -450,7 +450,7 @@ function ChatPanel({ animate }: { animate: boolean }) {
       {/* Input */}
       <div className="p-2">
         <div className="bg-stone-100/80 rounded-2xl px-3 pt-2.5 pb-2">
-          <div className="text-[12px] text-stone-400">Message DenchClaw...</div>
+          <div className="text-[12px] text-stone-400">Message Elav.AI...</div>
           <div className="flex items-center justify-between mt-1.5">
             <svg className="w-4 h-4 text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
@@ -533,7 +533,7 @@ export default function AppDemo() {
                     <span className="text-stone-700 font-medium">founders</span>
                   </div>
                   <div className="flex-1" />
-                  <span className="text-[10px] text-stone-400 font-mono">denchclaw.sh</span>
+                  <span className="text-[10px] text-stone-400 font-mono">elav.ai</span>
                 </div>
 
                 {/* Content area */}

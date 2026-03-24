@@ -101,7 +101,7 @@ export default function Channels() {
                │
                ▼
   ┌────────────────────────────┐
-  │     DenchClaw Gateway      │
+  │     Elav.AI Gateway      │
   │   ws://127.0.0.1:18789    │
   └─────────────┬──────────────┘
                 │
@@ -109,7 +109,7 @@ export default function Channels() {
     │           │           │
     ▼           ▼           ▼
   AI SDK     Web UI       CLI
-  Engine     (Dench)    (denchclaw)
+  Engine     (Elav)    (elav)
 `}
               </pre>
             </div>

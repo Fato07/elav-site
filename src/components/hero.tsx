@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 import { Copy, Check, ArrowDown } from "lucide-react";
 import { useState } from "react";
 
-const DENCHCLAW_ASCII = [
-  "██████╗ ███████╗███╗   ██╗ ██████╗██╗  ██╗ ██████╗██╗      █████╗ ██╗    ██╗",
-  "██╔══██╗██╔════╝████╗  ██║██╔════╝██║  ██║██╔════╝██║     ██╔══██╗██║    ██║",
-  "██║  ██║█████╗  ██╔██╗ ██║██║     ███████║██║     ██║     ███████║██║ █╗ ██║",
-  "██║  ██║██╔══╝  ██║╚██╗██║██║     ██╔══██║██║     ██║     ██╔══██║██║███╗██║",
-  "██████╔╝███████╗██║ ╚████║╚██████╗██║  ██║╚██████╗███████╗██║  ██║╚███╔███╔╝",
-  "╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ",
+const ELAV_ASCII = [
+  "███████╗██╗      █████╗ ██╗   ██╗   █████╗ ██╗",
+  "██╔════╝██║     ██╔══██╗██║   ██║  ██╔══██╗██║",
+  "█████╗  ██║     ███████║██║   ██║  ███████║██║",
+  "██╔══╝  ██║     ██╔══██║╚██╗ ██╔╝  ██╔══██║██║",
+  "███████╗███████╗██║  ██║ ╚████╔╝██╗██║  ██║██║",
+  "╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝ ╚═╝╚═╝  ╚═╝╚═╝",
 ];
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText("npx denchclaw");
+    await navigator.clipboard.writeText("npx elav@latest");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -50,8 +50,8 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <div className="ascii-banner select-none" aria-label="DenchClaw">
-            {DENCHCLAW_ASCII.join("\n")}
+          <div className="ascii-banner select-none" aria-label="Elav.AI">
+            {ELAV_ASCII.join("\n")}
           </div>
         </motion.div>
 
@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="mt-5 text-center font-[family-name:var(--font-instrument)] text-xl sm:text-2xl lg:text-3xl text-stone-600 italic"
         >
-          AI CRM, hosted locally on your Mac.<br />Built on OpenClaw.
+          Your AI Operations Team.<br />Built on OpenClaw.
         </motion.p>
 
 
@@ -76,7 +76,7 @@ export default function Hero() {
           <button onClick={handleCopy} className="bg-stone-800/90 border border-stone-800 rounded-[12px] px-6 py-3.5 font-mono text-base ring-2 ring-stone-200 ring-offset-4 ring-offset-stone-50 text-stone-50 flex items-center justify-between gap-3.5 cursor-pointer transition-all duration-300 hover:border-stone-700 group">
             <span>
               <span className="text-stone-500">$</span>{" "}
-              <span className="text-stone-50">npx denchclaw</span>
+              <span className="text-stone-50">npx elav@latest</span>
             </span>
             <span className="text-stone-500 group-hover:text-stone-300 transition-colors">
               {copied ? (

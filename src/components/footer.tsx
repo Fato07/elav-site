@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Logo & tagline */}
           <div className="flex flex-col items-center sm:items-start gap-1.5">
             <span className="font-[family-name:var(--font-mono)] text-sm font-semibold tracking-wider text-stone-900">
-              DENCHCLAW
+              ELAV.AI
             </span>
             <span className="text-xs text-stone-400">
               Powered by{" "}
@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-stone-500">
             <a
-              href="https://github.com/DenchHQ/denchclaw"
+              href="https://github.com/Fato07/elav"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-stone-900 transition-colors"
@@ -38,7 +38,7 @@ export default function Footer() {
               GitHub
             </a>
             <a
-              href="https://www.npmjs.com/package/denchclaw"
+              href="https://www.npmjs.com/package/elav"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-stone-900 transition-colors"
@@ -50,7 +50,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-stone-100 text-center">
           <p className="text-xs text-stone-400">
-            &copy; {new Date().getFullYear()} DenchHQ · San Francisco, CA
+            &copy; {new Date().getFullYear()} CodesDevs OÜ · Tallinn, Estonia · Built on OpenClaw
           </p>
         </div>
       </div>

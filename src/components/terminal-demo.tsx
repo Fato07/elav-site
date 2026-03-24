@@ -10,30 +10,30 @@ interface TerminalLine {
 }
 
 const terminalLines: TerminalLine[] = [
-  { type: "comment", text: "# Bootstrap DenchClaw (onboard + gateway + web UI)" },
+  { type: "comment", text: "# Bootstrap Elav.AI (onboard + gateway + web UI)" },
   { type: "prompt", text: "$ " },
-  { type: "command", text: "npx denchclaw", delay: 40 },
+  { type: "command", text: "npx elav@latest", delay: 40 },
   { type: "blank", text: "" },
   { type: "accent", text: "  ◆ Ensuring OpenClaw CLI is available..." },
-  { type: "accent", text: "  ◆ Running onboard --install-daemon (profile: dench)" },
-  { type: "accent", text: "  ◆ Seeding workspace...          ~/.openclaw-dench/workspace/workspace.duckdb" },
+  { type: "accent", text: "  ◆ Running onboard --install-daemon (profile: elav)" },
+  { type: "accent", text: "  ◆ Seeding workspace...          ~/.openclaw-elav/workspace/workspace.duckdb" },
   { type: "accent", text: "  ◆ Verifying gateway health...   ws://127.0.0.1:18789" },
   { type: "accent", text: "  ◆ Preparing web UI...           http://localhost:3100" },
   { type: "blank", text: "" },
   { type: "success", text: "Bootstrap checklist" },
   { type: "success", text: "  [ok] OpenClaw CLI detected" },
-  { type: "success", text: "  [ok] Profile pinned: dench" },
+  { type: "success", text: "  [ok] Profile pinned: elav" },
   { type: "success", text: "  [ok] Gateway reachable at ws://127.0.0.1:18789" },
   { type: "success", text: "  [ok] Web UI reachable on port 3100" },
   { type: "blank", text: "" },
-  { type: "success", text: "DenchClaw ready" },
-  { type: "output", text: "Profile: dench" },
+  { type: "success", text: "Elav.AI ready" },
+  { type: "output", text: "Profile: elav" },
   { type: "output", text: "Gateway: reachable" },
   { type: "output", text: "Web UI: http://localhost:3100" },
   { type: "blank", text: "" },
   { type: "comment", text: "# Talk to your agent" },
   { type: "prompt", text: "$ " },
-  { type: "command", text: 'denchclaw agent --message "Summarize my inbox"', delay: 25 },
+  { type: "command", text: 'elav agent --message "Summarize my inbox"', delay: 25 },
   { type: "blank", text: "" },
   { type: "output", text: '  You have 3 unread messages across WhatsApp and Slack.' },
   { type: "output", text: '  1. Sarah (WhatsApp): "Meeting moved to 3pm"' },
@@ -125,7 +125,7 @@ export default function TerminalDemo() {
               <div className="terminal-dot" style={{ background: "#FFBD2E" }} />
               <div className="terminal-dot" style={{ background: "#27CA40" }} />
               <span className="ml-4 text-xs text-stone-500 font-[family-name:var(--font-mono)]">
-                denchclaw — terminal
+                elav — terminal
               </span>
             </div>
             <div className="terminal-body min-h-[420px] sm:min-h-[480px] overflow-hidden">

@@ -357,7 +357,7 @@ export default function PromptShowcase() {
             One prompt for anything
           </h2>
           <p className="text-stone-500 text-lg max-w-lg mx-auto">
-            Type what you need in plain English. DenchClaw handles the rest.
+            Type what you need in plain English. Elav.AI handles the rest.
           </p>
         </motion.div>
 

@@ -10,25 +10,25 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "DenchClaw — AI CRM, hosted locally on your Mac",
+  title: "Elav.AI — Your AI Operations Team",
   description:
-    "AI-powered CRM and workflow automation that runs on localhost:3100. Chat with your database, enrich leads, automate outreach. Powered by OpenClaw.",
+    "Not one chatbot. A team of 7 specialized AI agents running your business operations 24/7. Built on OpenClaw.",
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "DenchClaw — AI CRM, hosted locally on your Mac",
+    title: "Elav.AI — Your AI Operations Team",
     description:
-      "AI-powered CRM and workflow automation that runs on localhost:3100. Powered by OpenClaw.",
+      "Not one chatbot. A team of 7 specialized AI agents running your business operations 24/7. Built on OpenClaw.",
     type: "website",
-    url: "https://denchclaw.sh",
+    url: "https://elav.ai",
     images: [{ url: "/og.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DenchClaw — AI CRM, hosted locally on your Mac",
+    title: "Elav.AI — Your AI Operations Team",
     description:
-      "AI-powered CRM and workflow automation on localhost:3100, powered by OpenClaw.",
+      "Not one chatbot. A team of 7 specialized AI agents running your business operations 24/7. Built on OpenClaw.",
     images: ["/og.jpg"],
   },
 };

@@ -8,7 +8,7 @@ export default function InstallCTA() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText("npx denchclaw");
+    await navigator.clipboard.writeText("npx elav@latest");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -48,7 +48,7 @@ export default function InstallCTA() {
             Get Started
           </p>
           <h2 className="font-[family-name:var(--font-instrument)] text-4xl sm:text-5xl text-stone-900 italic mb-6">
-            Install DenchClaw
+            Install Elav.AI
           </h2>
           <p className="text-stone-500 text-lg mb-10 max-w-md mx-auto">
             One command. Node 22+. Opens at{" "}
@@ -73,7 +73,7 @@ export default function InstallCTA() {
           >
             <span>
               <span className="text-stone-500">$</span>{" "}
-              <span className="text-stone-100">npx denchclaw</span>
+              <span className="text-stone-100">npx elav@latest</span>
             </span>
             <span className="text-stone-500 group-hover:text-stone-300 transition-colors">
               {copied ? (
@@ -116,7 +116,7 @@ export default function InstallCTA() {
           className="flex items-center justify-center"
         >
           <a
-            href="https://github.com/DenchHQ/denchclaw"
+            href="https://github.com/Fato07/elav"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 hover:shadow-lg transition-all"

@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 
 const commands = [
   {
-    cmd: "denchclaw gateway start",
+    cmd: "elav gateway start",
     desc: "Start the WebSocket gateway and web UI",
   },
   {
-    cmd: 'denchclaw agent --message "..."',
+    cmd: 'elav agent --message "..."',
     desc: "Talk to the agent from your terminal",
   },
   {
-    cmd: "denchclaw message send --to ...",
+    cmd: "elav message send --to ...",
     desc: "Send messages to any connected channel",
   },
   {
-    cmd: "denchclaw channels login",
+    cmd: "elav channels login",
     desc: "Link WhatsApp, Telegram, and more",
   },
   {
-    cmd: "denchclaw agent --thinking high",
+    cmd: "elav agent --thinking high",
     desc: "Enable extended reasoning and chain-of-thought",
   },
   {
-    cmd: "denchclaw doctor",
+    cmd: "elav doctor",
     desc: "Diagnose configuration and security issues",
   },
 ];
