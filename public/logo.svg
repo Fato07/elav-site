@@ -1,14 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 40" fill="#0a0a0a">
-  <!-- E -->
-  <path d="M0 0h5v40H0zM0 0h24v5H0zM0 17.5h18v5H0zM0 35h24v5H0z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 80" fill="#1c1917">
+  <!-- E: 3 bars -->
+  <rect x="0" y="0" width="8" height="80"/>
+  <rect x="0" y="0" width="40" height="8"/>
+  <rect x="0" y="36" width="32" height="8"/>
+  <rect x="0" y="72" width="40" height="8"/>
+
   <!-- L -->
-  <path d="M32 0h5v40h-5zM32 35h24v5H32z"/>
-  <!-- A no crossbar -->
-  <path d="M89 40h-5.5L68 0h5.5L84 33.5 94.5 0H100z"/>
-  <!-- V -->
-  <path d="M105 0h5.5L121 33.5 131.5 0H137L126.5 40h-11z"/>
-  <!-- A no crossbar -->
-  <path d="M176 40h-5.5L155 0h5.5L171 33.5 181.5 0H187z"/>
+  <rect x="54" y="0" width="8" height="80"/>
+  <rect x="54" y="72" width="40" height="8"/>
+
+  <!-- A (no crossbar): peak at TOP, open legs at bottom -->
+  <polygon points="126,80 118,80 143,0 151,0 176,80 168,80 147,12"/>
+
+  <!-- V: peak at BOTTOM, open legs at top -->
+  <polygon points="186,0 194,0 211,68 228,0 236,0 217,80 205,80"/>
+
+  <!-- gap -->
+
+  <!-- A (no crossbar): same as first A -->
+  <polygon points="288,80 280,80 305,0 313,0 338,80 330,80 309,12"/>
+
   <!-- I -->
-  <path d="M195 0h5v40h-5z"/>
+  <rect x="352" y="0" width="8" height="80"/>
 </svg>
