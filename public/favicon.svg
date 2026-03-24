@@ -1,12 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#1c1917"/>
-  <!-- E as a bold block, then LAV as connected angular strokes -->
-  <g fill="none" stroke="#d6d3d1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- L: vertical then horizontal -->
-    <polyline points="8,8 8,24 13,24"/>
-    <!-- A (no crossbar = inverted V): -->
-    <polyline points="13,24 17,8 21,24"/>
-    <!-- V: mirror of A -->
-    <polyline points="21,24 25,8"/>
+  <!-- Simplified ELAV mark: A(no crossbar) + V as mirror -->
+  <g fill="#d6d3d1">
+    <polygon points="8,24 14,6 20,24 16.5,24 14,15 11.5,24"/>
+    <polygon points="14,24 20,6 26,24 22.5,24 20,15 17.5,24"/>
   </g>
 </svg>
