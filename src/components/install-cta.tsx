@@ -48,7 +48,7 @@ export default function InstallCTA() {
             Get Started
           </p>
           <h2 className="font-[family-name:var(--font-instrument)] text-4xl sm:text-5xl text-stone-900 italic mb-6">
-            Install Elav.AI
+            Install Elav AI
           </h2>
           <p className="text-stone-500 text-lg mb-10 max-w-md mx-auto">
             One command. Node 22+. Opens at{" "}

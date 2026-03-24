@@ -10,14 +10,14 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Elav.AI — Your AI Operations Team",
+  title: "Elav AI — Your AI Operations Team",
   description:
     "Not one chatbot. A team of 7 specialized AI agents running your business operations 24/7. Built on OpenClaw.",
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Elav.AI — Your AI Operations Team",
+    title: "Elav AI — Your AI Operations Team",
     description:
       "Not one chatbot. A team of 7 specialized AI agents running your business operations 24/7. Built on OpenClaw.",
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elav.AI — Your AI Operations Team",
+    title: "Elav AI — Your AI Operations Team",
     description:
       "Not one chatbot. A team of 7 specialized AI agents running your business operations 24/7. Built on OpenClaw.",
     images: ["/og.jpg"],

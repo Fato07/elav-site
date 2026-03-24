@@ -10,7 +10,7 @@ interface TerminalLine {
 }
 
 const terminalLines: TerminalLine[] = [
-  { type: "comment", text: "# Bootstrap Elav.AI (onboard + gateway + web UI)" },
+  { type: "comment", text: "# Bootstrap Elav AI (onboard + gateway + web UI)" },
   { type: "prompt", text: "$ " },
   { type: "command", text: "npx elav@latest", delay: 40 },
   { type: "blank", text: "" },
@@ -26,7 +26,7 @@ const terminalLines: TerminalLine[] = [
   { type: "success", text: "  [ok] Gateway reachable at ws://127.0.0.1:18789" },
   { type: "success", text: "  [ok] Web UI reachable on port 3100" },
   { type: "blank", text: "" },
-  { type: "success", text: "Elav.AI ready" },
+  { type: "success", text: "Elav AI ready" },
   { type: "output", text: "Profile: elav" },
   { type: "output", text: "Gateway: reachable" },
   { type: "output", text: "Web UI: http://localhost:3100" },

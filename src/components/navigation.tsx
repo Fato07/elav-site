@@ -22,7 +22,7 @@ export default function Navigation() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-13 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
-          <img src="/favicon.svg" alt="Elav.AI" className="w-7 h-7" />
+          <img src="/favicon.svg" alt="Elav AI" className="w-7 h-7" />
           <a
             href="#"
             className="font-[family-name:var(--font-mono)] text-base font-semibold tracking-wider text-stone-900 leading-none"

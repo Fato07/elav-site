@@ -15,10 +15,10 @@ const capabilities = [
     iconBg: "bg-blue-50",
     title: "Uses Your Chrome Profile",
     description:
-      "Unlike other AI tools, Elav.AI uses your existing Chrome profile — all your auth sessions, cookies, and history. It logs into LinkedIn, scrapes YC batches, and sends messages as you.",
+      "Unlike other AI tools, Elav AI uses your existing Chrome profile — all your auth sessions, cookies, and history. It logs into LinkedIn, scrapes YC batches, and sends messages as you.",
     demo: (
       <div className="bg-stone-900 rounded-xl p-4 text-[11px] font-mono text-stone-300 space-y-1.5 shadow-inner">
-        <p className="text-stone-500">{"// Elav.AI detects your active Chrome profile"}</p>
+        <p className="text-stone-500">{"// Elav AI detects your active Chrome profile"}</p>
         <p><span className="text-green-400">✓</span> Found Chrome profile: <span className="text-blue-400">Default</span></p>
         <p><span className="text-green-400">✓</span> Auth sessions: <span className="text-stone-200">LinkedIn, Gmail, GitHub, Twitter</span></p>
         <p><span className="text-green-400">✓</span> Cookies synced — no login needed</p>
@@ -35,7 +35,7 @@ const capabilities = [
     iconBg: "bg-violet-50",
     title: "Chat with Your Database",
     description:
-      "Ask questions in plain English — Elav.AI translates to SQL, queries your DuckDB, and returns structured results. Like having a data analyst on speed dial.",
+      "Ask questions in plain English — Elav AI translates to SQL, queries your DuckDB, and returns structured results. Like having a data analyst on speed dial.",
     demo: (
       <div className="space-y-2.5">
         <div className="bg-blue-600 text-white text-[11px] px-3.5 py-2 rounded-2xl rounded-tr-sm inline-block shadow-sm">
@@ -58,7 +58,7 @@ const capabilities = [
     iconBg: "bg-emerald-50",
     title: "Coding Agent with Diffs",
     description:
-      "Elav.AI doesn't just talk — it writes code. Review changes in a rich diff viewer before applying. Like Cursor, but for your whole system.",
+      "Elav AI doesn't just talk — it writes code. Review changes in a rich diff viewer before applying. Like Cursor, but for your whole system.",
     demo: (
       <div className="bg-white border border-stone-200 rounded-xl overflow-hidden text-[11px] font-mono shadow-sm">
         <div className="px-3 py-2 bg-stone-50 border-b border-stone-200 flex items-center gap-2">
@@ -101,7 +101,7 @@ const capabilities = [
     iconBg: "bg-amber-50",
     title: "Your Second Brain",
     description:
-      "Elav.AI has full access to your Mac — files, apps, documents. It remembers context across sessions, learns your preferences, and proactively handles tasks.",
+      "Elav AI has full access to your Mac — files, apps, documents. It remembers context across sessions, learns your preferences, and proactively handles tasks.",
     demo: (
       <div className="bg-stone-50 rounded-xl p-4 space-y-2.5 text-[11px] border border-stone-100">
         <div className="flex items-center gap-2 text-stone-500">
@@ -158,7 +158,7 @@ export default function CapabilitiesDemo() {
             Not just chat — full autonomy
           </h2>
           <p className="text-stone-500 text-lg max-w-xl mx-auto">
-            Elav.AI doesn&apos;t just answer questions. It takes action — browsing the web,
+            Elav AI doesn&apos;t just answer questions. It takes action — browsing the web,
             querying databases, writing code, and managing your pipeline.
           </p>
         </motion.div>

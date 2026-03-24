@@ -43,7 +43,7 @@ export default function OpenSource() {
             Built in the open
           </h2>
           <p className="text-stone-400 text-lg max-w-lg mx-auto mb-10">
-            Elav.AI is your AI operations team built on the OpenClaw framework. The right way to use OpenClaw.
+            Elav AI is your AI operations team built on the OpenClaw framework. The right way to use OpenClaw.
           </p>
         </motion.div>
 
