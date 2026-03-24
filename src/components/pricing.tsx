@@ -7,7 +7,7 @@ const tiers = [
   {
     name: "Starter",
     setup: "",
-    monthly: "€500",
+    monthly: "From €500",
     description: "One AI-powered workflow for your team",
     features: [
       "1 automated workflow",
@@ -17,11 +17,12 @@ const tiers = [
       "Email support",
     ],
     highlighted: false,
+    cta: "Get Started",
   },
   {
     name: "Pro",
     setup: "",
-    monthly: "€1,500",
+    monthly: "Custom",
     description: "Full AI operations across your business",
     features: [
       "Multiple workflows",
@@ -32,21 +33,7 @@ const tiers = [
       "Custom integrations",
     ],
     highlighted: true,
-  },
-  {
-    name: "Enterprise",
-    setup: "",
-    monthly: "Custom",
-    description: "Dedicated AI ops for large teams",
-    features: [
-      "Unlimited workflows",
-      "Custom AI training on your data",
-      "Dedicated infrastructure",
-      "SLA guarantees",
-      "On-call support",
-      "White-label options",
-    ],
-    highlighted: false,
+    cta: "Book a Demo",
   },
 ];
 
@@ -81,7 +68,7 @@ export default function Pricing() {
           className="text-center mb-6"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-stone-900 text-white text-sm font-[family-name:var(--font-mono)]">
-            Monthly subscription or pay-as-you-go. Cancel anytime.
+            Free trial · No credit card · Cancel anytime
           </span>
         </motion.div>
 
@@ -99,11 +86,11 @@ export default function Pricing() {
             Simple, transparent pricing
           </h2>
           <p className="text-stone-500 text-lg max-w-md mx-auto">
-            No setup fees. No lock-in. Pay monthly or per task.
+            Start small or go all-in. No setup fees. No lock-in.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
           {tiers.map((tier, idx) => (
             <motion.div
               key={tier.name}
@@ -195,7 +182,7 @@ export default function Pricing() {
                     : "bg-stone-900 text-white hover:bg-stone-800 hover:shadow-lg"
                 }`}
               >
-                {tier.name === "Enterprise" ? "Contact Us" : "Get Started"}
+                {tier.cta || "Get Started"}
               </a>
             </motion.div>
           ))}
