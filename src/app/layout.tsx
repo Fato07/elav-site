@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Instrument_Serif } from "next/font/google";
+import { Instrument_Serif, Rajdhani } from "next/font/google";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-instrument",
+  display: "swap",
+});
+
+const rajdhani = Rajdhani({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-rajdhani",
   display: "swap",
 });
 
@@ -39,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={instrumentSerif.variable}>
+    <html lang="en" className={`${instrumentSerif.variable} ${rajdhani.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );
