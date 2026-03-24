@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Logo & tagline */}
           <div className="flex flex-col items-center sm:items-start gap-1.5">
             <span className="font-[family-name:var(--font-mono)] text-sm font-semibold tracking-wider text-stone-900">
-              ELAV AI
+              ELAV
             </span>
             <span className="text-xs text-stone-400">
               Powered by OpenClaw

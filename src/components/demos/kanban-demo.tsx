@@ -248,7 +248,7 @@ export default function KanbanDemo() {
             Track every conversation
           </h2>
           <p className="text-stone-500 text-lg max-w-xl">
-            Drag-and-drop kanban boards auto-update as leads reply. Elav AI
+            Drag-and-drop kanban boards auto-update as leads reply. Elav
             moves cards through your pipeline automatically.
           </p>
         </motion.div>

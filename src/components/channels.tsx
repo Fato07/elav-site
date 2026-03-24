@@ -101,7 +101,7 @@ export default function Channels() {
                │
                ▼
   ┌────────────────────────────┐
-  │     Elav AI Gateway      │
+  │     Elav Gateway      │
   │   ws://127.0.0.1:18789    │
   └─────────────┬──────────────┘
                 │

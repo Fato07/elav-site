@@ -7,14 +7,14 @@ const team = [
     name: "Roman Gallardo",
     role: "Co-Founder",
     location: "Tallinn, Estonia",
-    bio: "I've been building and scaling ventures for over a decade. Started in operations, learned fast that growth isn't about ideas — it's about execution speed and systems that don't break. I've co-founded companies across multiple verticals, taken products from zero to revenue, and built GTM machines that actually convert. From assembling teams to closing enterprise deals, I've done every role in a startup at least twice. I moved from Buenos Aires to Tallinn because this is where the edge is — European tech, global ambition, zero bureaucracy. When I saw what autonomous AI agents could do for business operations, I didn't want to consult on it. I wanted to own it. ELAV AI is the company I wish existed at every venture I've built — an AI operations team that runs while you focus on what matters.",
+    bio: "I've been building and scaling ventures for over a decade. Started in operations, learned fast that growth isn't about ideas — it's about execution speed and systems that don't break. I've co-founded companies across multiple verticals, taken products from zero to revenue, and built GTM machines that actually convert. From assembling teams to closing enterprise deals, I've done every role in a startup at least twice. I moved from Buenos Aires to Tallinn because this is where the edge is — European tech, global ambition, zero bureaucracy. When I saw what autonomous AI agents could do for business operations, I didn't want to consult on it. I wanted to own it. ELAV is the company I wish existed at every venture I've built — an AI operations team that runs while you focus on what matters.",
     initials: "RG",
   },
   {
     name: "Fathin Dosunmu",
     role: "Co-Founder",
     location: "Tallinn, Estonia",
-    bio: "I've been building software since I was a teenager in London. Moved to Tallinn at 23 to start CodesDevs, an AI engineering studio where I built agent systems for clients before 'AI agents' was even a buzzword. I went through the Tehnopol pre-accelerator in Estonia, pitched to investors, and learned that the hard part isn't building AI — it's making it do something a business will actually pay for. I've shipped autonomous pipelines that run 24/7, knowledge graphs with thousands of entities, and multi-agent fleets that coordinate without human intervention. ELAV AI is everything I've learned distilled into one product: AI that doesn't just answer questions, but runs your operations while you sleep.",
+    bio: "I've been building software since I was a teenager in London. Moved to Tallinn at 23 to start CodesDevs, an AI engineering studio where I built agent systems for clients before 'AI agents' was even a buzzword. I went through the Tehnopol pre-accelerator in Estonia, pitched to investors, and learned that the hard part isn't building AI — it's making it do something a business will actually pay for. I've shipped autonomous pipelines that run 24/7, knowledge graphs with thousands of entities, and multi-agent fleets that coordinate without human intervention. ELAV is everything I've learned distilled into one product: AI that doesn't just answer questions, but runs your operations while you sleep.",
     initials: "FD",
   },
 ];

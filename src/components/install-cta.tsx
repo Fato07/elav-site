@@ -42,7 +42,7 @@ export default function ContactCTA() {
             Ready to automate?
           </h2>
           <p className="text-stone-500 text-lg mb-10 max-w-md mx-auto">
-            Let us show you how Elav AI can transform your operations
+            Let us show you how Elav can transform your operations
             with autonomous agents working around the clock.
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ export default function ContactCTA() {
           className="flex flex-col items-center gap-4"
         >
           <a
-            href="mailto:atlas@codesdevs.io?subject=Elav AI Demo Request"
+            href="mailto:atlas@codesdevs.io?subject=Elav Demo Request"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-stone-900 text-white text-sm font-medium rounded-full hover:bg-stone-800 hover:shadow-lg transition-all"
           >
             Book a Demo

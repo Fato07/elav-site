@@ -21,7 +21,7 @@ export default function Navigation() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-13 flex items-center justify-between">
         <a href="#" className="text-lg font-semibold tracking-wide text-stone-900 leading-none">
-          ELAV AI
+          ELAV
         </a>
 
         <div className="flex items-center gap-6 text-sm">

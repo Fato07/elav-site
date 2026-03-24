@@ -35,7 +35,7 @@ export default function Hero() {
         >
           {/* Clean typographic logo */}
           <h1 className="text-6xl sm:text-8xl lg:text-9xl font-semibold tracking-tight text-stone-900 leading-none">
-            ELAV AI
+            ELAV
           </h1>
         </motion.div>
 
