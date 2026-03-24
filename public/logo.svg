@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" fill="#1c1917">
-  <!-- E -->
-  <path d="M0 0h40v14H16v18h20v14H16v18h24v14H0z"/>
-  <!-- L -->
-  <path d="M56 0h16v64h24v14H56z"/>
-  <!-- A (no crossbar — inverted V) -->
-  <path d="M128 78L108 0h17l15 54L155 0h17L152 78h-24z"/>
-  <!-- V -->
-  <path d="M186 0h17l15 54L233 0h17L230 78h-24z"/>
-  <!-- space -->
-  <!-- A (no crossbar — inverted V) -->
-  <path d="M296 78L276 0h17l15 54L323 0h17L320 78h-24z"/>
-  <!-- I -->
-  <path d="M352 0h16v78h-16z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 90" fill="#1c1917">
+  <!-- E - bold condensed -->
+  <path d="M0 0h50v16H20v21h26v16H20v21h30v16H0z"/>
+  <!-- L - bold condensed -->
+  <path d="M62 0h20v74h30v16H62z"/>
+  <!-- A - sharp peak, no crossbar, knife-like -->
+  <path d="M152 90L122 0h22l20 62L184 0h22L176 90h-24z"/>
+  <!-- V - sharp, mirrors A -->
+  <path d="M208 0h22l20 62L270 0h22L260 90h-24z"/>
+  <!-- space 28px -->
+  <!-- A - sharp peak, no crossbar -->
+  <path d="M340 90L310 0h22l20 62L372 0h22L364 90h-24z"/>
+  <!-- I - bold condensed -->
+  <path d="M400 0h20v90h-20z"/>
 </svg>
