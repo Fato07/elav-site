@@ -8,13 +8,13 @@ const tiers = [
     name: "Starter",
     setup: "",
     monthly: "From €500",
-    description: "One AI-powered workflow for your team",
+    description: "Get your AI operations running",
     features: [
-      "1 automated workflow",
-      "Up to 500 tasks/month",
-      "CRM or lead gen or reporting",
-      "Weekly performance reports",
+      "AI-powered automation",
+      "CRM, lead gen & reporting",
+      "Weekly performance insights",
       "Email support",
+      "Cancel anytime",
     ],
     highlighted: false,
     cta: "Get Started",
@@ -23,14 +23,14 @@ const tiers = [
     name: "Pro",
     setup: "",
     monthly: "Custom",
-    description: "Full AI operations across your business",
+    description: "Full-scale AI operations for your business",
     features: [
-      "Multiple workflows",
-      "Unlimited tasks",
-      "Lead gen + CRM + outreach + reporting",
+      "Everything in Starter",
+      "Unlimited capacity",
+      "Custom integrations",
       "Real-time dashboards",
       "Priority support",
-      "Custom integrations",
+      "Dedicated onboarding",
     ],
     highlighted: true,
     cta: "Book a Demo",
@@ -144,15 +144,7 @@ export default function Pricing() {
                     </span>
                   )}
                 </div>
-                {tier.setup && tier.setup !== "Custom" && (
-                  <p
-                    className={`text-xs mt-1 ${
-                      tier.highlighted ? "text-stone-500" : "text-stone-400"
-                    }`}
-                  >
-                    + {tier.setup} one-time setup
-                  </p>
-                )}
+
               </div>
 
               <ul className="space-y-3 mb-8 flex-1">
