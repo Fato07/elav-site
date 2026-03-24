@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#1c1917"/>
-  <!-- Simplified ELAV mark: A(no crossbar) + V as mirror -->
-  <g fill="#d6d3d1">
-    <polygon points="8,24 14,6 20,24 16.5,24 14,15 11.5,24"/>
-    <polygon points="14,24 20,6 26,24 22.5,24 20,15 17.5,24"/>
+  <!-- AV mark — A (no crossbar) + V mirrored -->
+  <g fill="#e7e5e4">
+    <polygon points="4,26 3,26 11,6 14,6 22,26 21,26 12.5,8.5"/>
+    <polygon points="12,6 13,6 21,23.5 29,6 30,6 22,26 20,26"/>
   </g>
 </svg>

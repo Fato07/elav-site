@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 90" fill="#1c1917">
-  <!-- E - bold condensed -->
-  <path d="M0 0h50v16H20v21h26v16H20v21h30v16H0z"/>
-  <!-- L - bold condensed -->
-  <path d="M62 0h20v74h30v16H62z"/>
-  <!-- A - sharp peak, no crossbar, knife-like -->
-  <path d="M152 90L122 0h22l20 62L184 0h22L176 90h-24z"/>
-  <!-- V - sharp, mirrors A -->
-  <path d="M208 0h22l20 62L270 0h22L260 90h-24z"/>
-  <!-- space 28px -->
-  <!-- A - sharp peak, no crossbar -->
-  <path d="M340 90L310 0h22l20 62L372 0h22L364 90h-24z"/>
-  <!-- I - bold condensed -->
-  <path d="M400 0h20v90h-20z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" fill="#1c1917">
+  <!-- E - clean geometric, thin consistent strokes -->
+  <polygon points="0,10 50,10 50,20 12,20 12,45 42,45 42,55 12,55 12,80 50,80 50,90 0,90"/>
+  <!-- L -->
+  <polygon points="65,10 77,10 77,80 115,80 115,90 65,90"/>
+  <!-- A (no crossbar — two diagonal strokes meeting at peak, like inverted V) -->
+  <polygon points="140,90 130,90 158,10 170,10 198,90 188,90 164,22"/>
+  <!-- V (mirror of A — two diagonal strokes meeting at bottom) -->
+  <polygon points="205,10 215,10 239,78 263,10 273,10 245,90 233,90"/>
+  <!-- space -->
+  <!-- A (no crossbar) -->
+  <polygon points="320,90 310,90 338,10 350,10 378,90 368,90 344,22"/>
+  <!-- I -->
+  <polygon points="395,10 407,10 407,90 395,90"/>
 </svg>
