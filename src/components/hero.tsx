@@ -33,10 +33,14 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex flex-col items-center"
         >
-          {/* Clean typographic logo */}
-          <h1 className="text-6xl sm:text-8xl lg:text-9xl font-semibold tracking-tight text-stone-900 leading-none">
-            ELAV
-          </h1>
+          {/* SVG wordmark logo */}
+          <h1 className="sr-only">ELAV AI</h1>
+          <img
+            src="/logo.svg"
+            alt="ELAV AI"
+            className="h-14 sm:h-20 lg:h-24 w-auto"
+            draggable={false}
+          />
         </motion.div>
 
         {/* Tagline */}
