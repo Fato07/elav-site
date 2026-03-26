@@ -21,7 +21,7 @@ const useCases = [
     id: "prospect",
     icon: Search,
     label: "Find Leads",
-    prompt: "Find YC W26 founders building AI companies",
+    prompt: "Find OpenClaw Meetup attendees with email addresses",
     color: "#3b82f6",
     bg: "bg-blue-50",
   },
@@ -63,18 +63,18 @@ const useCases = [
 
 function ProspectDemo() {
   const leads = [
-    { name: "Veer Shah", company: "Cumulus Labs", role: "Founder & CEO", match: "98%" },
-    { name: "Emily Zhang", company: "Nexus AI", role: "Co-founder & CTO", match: "95%" },
-    { name: "Marcus Johnson", company: "DataForge", role: "Founder", match: "93%" },
-    { name: "Sarah Chen", company: "Quantum Labs", role: "CEO", match: "91%" },
-    { name: "Alex Park", company: "Synthetics.io", role: "Co-founder", match: "88%" },
+    { name: "Heikki Haldre", company: "Miros", role: "Co-founder & CEO", match: "98%" },
+    { name: "Teemu Arina", company: "HOLOLIFE Center", role: "Founder", match: "95%" },
+    { name: "Chris Kacher", company: "TriQuantum Technologies", role: "Co-founder", match: "93%" },
+    { name: "Timur Hassanov", company: "Bob W.", role: "CTO", match: "91%" },
+    { name: "Jurgen Ukkivi", company: "North Coast Code", role: "Co-Founder & CTO", match: "88%" },
   ];
 
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2 text-[11px] text-stone-400 mb-3">
         <Globe className="w-3 h-3 text-blue-500" />
-        <span>Scraping YC directory and LinkedIn — <span className="text-stone-600 font-medium">127 matches</span></span>
+        <span>Scraping meetup attendee list and LinkedIn — <span className="text-stone-600 font-medium">24 matches</span></span>
       </div>
       {leads.map((lead, i) => (
         <motion.div
@@ -103,17 +103,17 @@ function ProspectDemo() {
 
 function EnrichDemo() {
   const fields = [
-    { name: "Veer Shah", linkedin: "linkedin.com/in/veer-shah", email: "veer@cumulus.ai", education: "University of Wisconsin" },
-    { name: "Emily Zhang", linkedin: "linkedin.com/in/emily-zhang", email: "emily@nexusai.co", education: "Stanford University" },
-    { name: "Marcus Johnson", linkedin: "linkedin.com/in/marcus-j", email: "marcus@dataforge.io", education: "MIT" },
-    { name: "Sarah Chen", linkedin: "linkedin.com/in/sarah-chen", email: "sarah@quantumlabs.co", education: "UC Berkeley" },
+    { name: "Heikki Haldre", linkedin: "linkedin.com/in/hhaldre", email: "heikki.haldre@miros.ai", education: "Entrepreneur" },
+    { name: "Teemu Arina", linkedin: "linkedin.com/in/teemuarina", email: "teemu@hololifecenter.com", education: "Entrepreneur" },
+    { name: "Chris Kacher", linkedin: "linkedin.com/in/chriskacher", email: "chris@triquantumtech.com", education: "Finance/Investment" },
+    { name: "Timur Hassanov", linkedin: "linkedin.com/in/timurhassanov", email: "timur@bobw.co", education: "Estonian Business School" },
   ];
 
   return (
     <div>
       <div className="flex items-center gap-2 text-[11px] text-stone-400 mb-3">
         <Sparkles className="w-3 h-3 text-violet-500" />
-        <span>Enriching 127 profiles — <span className="text-stone-600 font-medium">98% coverage</span></span>
+        <span>Enriching 89 attendees — <span className="text-stone-600 font-medium">27% coverage</span></span>
       </div>
       <div className="border border-stone-100 rounded-xl overflow-hidden">
         <div className="grid grid-cols-[1fr_1.2fr_1.2fr_1fr] text-[9px] font-mono text-stone-400 uppercase tracking-wider px-3 py-2 bg-stone-50/80 border-b border-stone-100">
@@ -161,17 +161,17 @@ function EnrichDemo() {
 
 function OutreachDemo() {
   const messages = [
-    { name: "Veer Shah", preview: "Hi Veer, I saw Cumulus Labs in the latest YC batch — congrats! We're building...", status: "Sent", done: true },
-    { name: "Emily Zhang", preview: "Emily, your work on multimodal AI at Nexus is impressive. We'd love to...", status: "Sent", done: true },
-    { name: "Marcus Johnson", preview: "Marcus, DataForge caught my eye — the data infra space is heating up. I'd...", status: "Sending", done: false },
-    { name: "Sarah Chen", preview: "Sarah, Quantum Labs' approach to quantum computing is fascinating. We're...", status: "Queued", done: false },
+    { name: "Heikki Haldre", preview: "Hi Heikki, loved your work with Fits.me and now Miros — visual AI is the future! We're building...", status: "Sent", done: true },
+    { name: "Teemu Arina", preview: "Teemu, your biohacking expertise at HOLOLIFE Center is impressive. We'd love to...", status: "Sent", done: true },
+    { name: "Chris Kacher", preview: "Chris, TriQuantum Technologies caught my eye — the AI/Web3 intersection is heating up. I'd...", status: "Sending", done: false },
+    { name: "Franck Nouyrigat", preview: "Franck, your work with Startup Weekend is legendary. We're building stealth AI too and...", status: "Queued", done: false },
   ];
 
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2 text-[11px] text-stone-400 mb-3">
         <Mail className="w-3 h-3 text-emerald-500" />
-        <span>Sending personalized LinkedIn messages — <span className="text-stone-600 font-medium">42 of 67</span></span>
+        <span>Sending personalized LinkedIn messages — <span className="text-stone-600 font-medium">18 of 25</span></span>
       </div>
       {messages.map((m, i) => (
         <motion.div
@@ -197,17 +197,17 @@ function OutreachDemo() {
 
 function AnalyticsDemo() {
   const stats = [
-    { label: "Response Rate", value: "34%", change: "+12%", positive: true },
-    { label: "Avg Reply Time", value: "2.4d", change: "-0.8d", positive: true },
-    { label: "Pipeline Value", value: "$1.2M", change: "+$340K", positive: true },
-    { label: "Conversion", value: "6.5%", change: "+2.1%", positive: true },
+    { label: "Response Rate", value: "48%", change: "+15%", positive: true },
+    { label: "Avg Reply Time", value: "1.8d", change: "-0.6d", positive: true },
+    { label: "Pipeline Value", value: "$420K", change: "+$120K", positive: true },
+    { label: "Conversion", value: "7.9%", change: "+1.4%", positive: true },
   ];
 
   const bars = [
-    { label: "New", value: 89, color: "#94a3b8" },
-    { label: "Contacted", value: 67, color: "#3b82f6" },
-    { label: "Qualified", value: 31, color: "#10b981" },
-    { label: "Converted", value: 13, color: "#8b5cf6" },
+    { label: "New", value: 45, color: "#94a3b8" },
+    { label: "Contacted", value: 25, color: "#3b82f6" },
+    { label: "Qualified", value: 12, color: "#10b981" },
+    { label: "Converted", value: 7, color: "#8b5cf6" },
   ];
   const maxBar = bars[0].value;
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #fafaf9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .glow {
+    position: absolute;
+    top: -100px;
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(120,113,108,0.12) 0%, transparent 70%);
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .logo {
+    height: 72px;
+    margin-bottom: 28px;
+  }
+  .tagline {
+    font-size: 32px;
+    color: #78716c;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', serif;
+    margin-bottom: 16px;
+  }
+  .sub {
+    font-size: 18px;
+    color: #a8a29e;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  .stats {
+    margin-top: 36px;
+    display: flex;
+    gap: 32px;
+    font-size: 14px;
+    color: #a8a29e;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  .stats strong { color: #44403c; }
+  .stats .dot { color: #d6d3d1; }
+</style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="content">
+    <img class="logo" src="logo.svg" alt="ELAV AI" />
+    <div class="tagline">Your AI Operations Team.</div>
+    <div class="sub">Not one chatbot. A team of 7 specialized AI agents running your business operations 24/7.</div>
+    <div class="stats">
+      <span><strong>7</strong> Agents</span>
+      <span class="dot">·</span>
+      <span><strong>117</strong> Tools</span>
+      <span class="dot">·</span>
+      <span><strong>30+</strong> Skills</span>
+      <span class="dot">·</span>
+      <span><strong>24/7</strong> Autonomous</span>
+    </div>
+  </div>
+</body>
+</html>

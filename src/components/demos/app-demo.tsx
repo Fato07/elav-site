@@ -194,11 +194,11 @@ function CrmTable({ animateEnrichment }: { animateEnrichment: boolean }) {
         {/* Row 1: Title + description */}
         <div className="flex items-center">
           <h1 className="text-lg font-bold text-stone-900 font-[family-name:var(--font-instrument)]">
-            Founders
+            Attendees
           </h1>
           <div className="flex-1" />
           <p className="text-[11px] text-stone-400">
-            YC Winter 2026 batch founders
+            OpenClaw Meetup Tallinn — March 26, 2026
           </p>
         </div>
 
@@ -207,11 +207,11 @@ function CrmTable({ animateEnrichment }: { animateEnrichment: boolean }) {
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1.5 h-7 px-2.5 bg-stone-50 border border-stone-200/60 rounded-full text-stone-400">
               <Search className="w-3 h-3" />
-              <span className="text-[11px]">Search founders...</span>
+              <span className="text-[11px]">Search attendees...</span>
             </div>
             <div className="flex items-center gap-1.5 text-[11px] text-stone-500">
-              <span className="bg-stone-100 px-2 py-0.5 rounded">200 entries</span>
-              <span className="bg-stone-100 px-2 py-0.5 rounded">18 fields</span>
+              <span className="bg-stone-100 px-2 py-0.5 rounded">89 attendees</span>
+              <span className="bg-stone-100 px-2 py-0.5 rounded">7 fields</span>
               <span className="bg-blue-50 text-blue-600 px-2 py-0.5 rounded">1 relation</span>
             </div>
           </div>
@@ -250,7 +250,7 @@ function CrmTable({ animateEnrichment }: { animateEnrichment: boolean }) {
                 NOTES <ChevronDown className="w-2.5 h-2.5 inline ml-0.5 opacity-40" />
               </th>
               <th className="px-3 py-1.5 text-left font-semibold whitespace-nowrap">
-                EDUCATION <ChevronDown className="w-2.5 h-2.5 inline ml-0.5 opacity-40" />
+                INDUSTRY <ChevronDown className="w-2.5 h-2.5 inline ml-0.5 opacity-40" />
               </th>
             </tr>
           </thead>
@@ -328,7 +328,7 @@ function ChatPanel({ animate }: { animate: boolean }) {
       {/* Header */}
       <div className="px-3 py-1.5.5 border-b border-stone-200/40 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-[13px] font-semibold text-stone-800">Chat: founders</span>
+          <span className="text-[13px] font-semibold text-stone-800">Chat: attendees</span>
           <span className="text-[10px] text-stone-400">Streaming...</span>
         </div>
         <div className="flex items-center gap-1">
@@ -362,10 +362,10 @@ function ChatPanel({ animate }: { animate: boolean }) {
                   </div>
                   <div className="px-2.5 py-2 space-y-1">
                     {[
-                      { label: "New", value: 89, color: "#94a3b8d9" },
-                      { label: "Contacted", value: 67, color: "#3b82f6d9" },
-                      { label: "Qualified", value: 31, color: "#10b981d9" },
-                      { label: "Converted", value: 13, color: "#8b5cf6d9" },
+                      { label: "New", value: 45, color: "#94a3b8d9" },
+                      { label: "Contacted", value: 25, color: "#3b82f6d9" },
+                      { label: "Qualified", value: 12, color: "#10b981d9" },
+                      { label: "Converted", value: 7, color: "#8b5cf6d9" },
                     ].map((b) => (
                       <div key={b.label} className="flex items-center gap-1.5">
                         <span className="text-[8px] text-stone-400 w-[48px] text-right shrink-0">{b.label}</span>
@@ -390,7 +390,7 @@ function ChatPanel({ animate }: { animate: boolean }) {
                       <span className="text-purple-500">COUNT</span>
                       <span className="text-stone-500">(*)</span>{" "}
                       <span className="text-blue-500">FROM</span>{" "}
-                      <span className="text-amber-600">v_founders</span>{" "}
+                      <span className="text-amber-600">v_attendees</span>{" "}
                       <span className="text-blue-500">GROUP BY</span>{" "}
                       <span className="text-emerald-600">&apos;Status&apos;</span>{" "}
                       <span className="text-blue-500">ORDER BY</span>{" "}
@@ -398,10 +398,10 @@ function ChatPanel({ animate }: { animate: boolean }) {
                       <span className="text-blue-500">DESC</span>
                       <span className="text-stone-400">&quot;</span>
                       {"\n\n"}
-                      <span className="text-stone-500">New        | </span><span className="text-stone-700">89</span>{"\n"}
-                      <span className="text-stone-500">Contacted  | </span><span className="text-stone-700">67</span>{"\n"}
-                      <span className="text-stone-500">Qualified  | </span><span className="text-stone-700">31</span>{"\n"}
-                      <span className="text-stone-500">Converted  | </span><span className="text-stone-700">13</span>
+                      <span className="text-stone-500">New        | </span><span className="text-stone-700">45</span>{"\n"}
+                      <span className="text-stone-500">Contacted  | </span><span className="text-stone-700">25</span>{"\n"}
+                      <span className="text-stone-500">Qualified  | </span><span className="text-stone-700">12</span>{"\n"}
+                      <span className="text-stone-500">Converted  | </span><span className="text-stone-700">7</span>
                     </>
                   ) : msg.content}</pre>
                 </div>
@@ -530,7 +530,7 @@ export default function AppDemo() {
                   <div className="flex items-center gap-1.5 text-[11px] text-stone-400">
                     <span>workspace</span>
                     <ChevronRight className="w-3 h-3" />
-                    <span className="text-stone-700 font-medium">founders</span>
+                    <span className="text-stone-700 font-medium">attendees</span>
                   </div>
                   <div className="flex-1" />
                   <span className="text-[10px] text-stone-400 font-mono">elav.ai</span>

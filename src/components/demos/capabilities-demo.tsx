@@ -15,7 +15,7 @@ const capabilities = [
     iconBg: "bg-blue-50",
     title: "Uses Your Chrome Profile",
     description:
-      "Unlike other AI tools, Elav uses your existing Chrome profile — all your auth sessions, cookies, and history. It logs into LinkedIn, scrapes YC batches, and sends messages as you.",
+      "Unlike other AI tools, Elav uses your existing Chrome profile — all your auth sessions, cookies, and history. It logs into LinkedIn, scrapes meetup attendees, and sends messages as you.",
     demo: (
       <div className="bg-stone-900 rounded-xl p-4 text-[11px] font-mono text-stone-300 space-y-1.5 shadow-inner">
         <p className="text-stone-500">{"// Elav detects your active Chrome profile"}</p>
@@ -23,9 +23,9 @@ const capabilities = [
         <p><span className="text-green-400">✓</span> Auth sessions: <span className="text-stone-200">LinkedIn, Gmail, GitHub, Twitter</span></p>
         <p><span className="text-green-400">✓</span> Cookies synced — no login needed</p>
         <p className="text-stone-500 pt-1">{"// Browsing as you..."}</p>
-        <p><span className="text-yellow-400">→</span> Opening linkedin.com/in/veer-shah</p>
+        <p><span className="text-yellow-400">→</span> Opening linkedin.com/in/hhaldre</p>
         <p><span className="text-yellow-400">→</span> Sending connection request + message</p>
-        <p><span className="text-green-400">✓</span> Connection request sent to <span className="text-stone-200">Veer Shah</span></p>
+        <p><span className="text-green-400">✓</span> Connection request sent to <span className="text-stone-200">Heikki Haldre</span></p>
       </div>
     ),
   },
@@ -39,15 +39,15 @@ const capabilities = [
     demo: (
       <div className="space-y-2.5">
         <div className="bg-blue-600 text-white text-[11px] px-3.5 py-2 rounded-2xl rounded-tr-sm inline-block shadow-sm">
-          How many founders have we contacted from YC W26?
+          How many attendees have we contacted from the meetup?
         </div>
         <div className="bg-stone-900 rounded-xl p-3 text-[10px] font-mono text-stone-300 shadow-inner">
           <p className="text-stone-500">SELECT &quot;Status&quot;, COUNT(*) as count</p>
-          <p className="text-stone-500">FROM v_founders GROUP BY &quot;Status&quot;;</p>
+          <p className="text-stone-500">FROM v_attendees GROUP BY &quot;Status&quot;;</p>
         </div>
         <div className="text-[12px] text-stone-700 bg-stone-50 rounded-xl p-3 border border-stone-100">
-          You&apos;ve contacted <span className="font-semibold text-blue-600">67</span> of <span className="font-semibold">200</span> founders. 31 are qualified, 13 converted.
-          Reply rate is <span className="font-semibold text-green-600">34%</span>.
+          You&apos;ve contacted <span className="font-semibold text-blue-600">25</span> of <span className="font-semibold">89</span> attendees. 12 are qualified, 7 converted.
+          Reply rate is <span className="font-semibold text-green-600">48%</span>.
         </div>
       </div>
     ),
@@ -115,7 +115,7 @@ const capabilities = [
           </p>
           <p className="flex items-start gap-2.5">
             <span className="w-2 h-2 rounded-full bg-blue-500 mt-1 shrink-0" />
-            YC W26 outreach campaign: 200 founders, 67 contacted, focus on AI/ML companies
+            OpenClaw Meetup outreach: 89 attendees, 25 contacted, focus on tech entrepreneurs
           </p>
           <p className="flex items-start gap-2.5">
             <span className="w-2 h-2 rounded-full bg-purple-500 mt-1 shrink-0" />
